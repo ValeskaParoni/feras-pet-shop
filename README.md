@@ -1,4 +1,13 @@
-# feras-pet-shop
+# Feras Petshop
+
+- Install nodejs and npm: https://nodejs.org/en/download/package-manager/)
+- Clone the repository
+- Go to feras-pet-shop/ folder
+- Run _npm install_ to install all packages
+- Run _./node-modules/.bin/webpack_
+- Open index.html
+
+## Tasks
 
 | Task | Assignee | Status | Dependencies |
 | ------------- | ------------- | ------------- | ------------- |
