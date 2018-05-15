@@ -1,0 +1,547 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+	background-color: rgb(250, 250, 250);
+
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+footer {
+    background-color: purple;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin-top: 100px;
+    overflow: hidden;
+}
+
+header {
+	background-color: purple;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	z-index: 1;
+
+}
+
+nav {
+	overflow: hidden;
+	padding-left: 150px;
+	z-index: 1;
+	/*padding-top: 40px;*/
+}
+
+
+nav a {
+	float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 16px;
+    border-right: 2px solid white;
+    text-decoration: none
+
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+b {
+	color: purple;
+}
+
+#username {
+	color: #f2f2f2;
+	float: left;
+	margin-right: 30px;
+	padding-top: 10px;
+}
+
+#home_link, #link_change_user, #link_adm_users {
+	border-left: 2px solid white;
+}
+
+#logged_user_options {
+	color: #f2f2f2;
+	float: right;
+}
+
+#logged_user_options span, #logged_user_options a{
+	float: left;
+
+}
+
+@media screen and (max-width: 850px){
+    nav a, #home_link, #logged_user_options a, #logged_user_options{float: none;
+    	padding: 0;
+    	border: 0;
+    }
+
+    #logged_user_options span{
+    	display: none;
+    }
+
+
+}
+
+h1, h2 {
+	color: purple;
+	margin: 15px 0;
+}
+
+
+
+.content {
+	max-width: 60%;
+	margin: auto;
+	margin-bottom: 150px;
+	padding-top: 90px;
+	padding-bottom: 20px;
+	line-height: 1.2;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 1.15em;
+}
+
+p {
+	margin: 5px 0;
+	text-indent: 30px;
+}
+
+#logo_img {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+#login{
+	float:right;
+	padding-top: 20px;
+	margin-right: 20px;
+}
+
+#login label{
+	color: #f2f2f2;
+	padding-top: 6px;
+	padding-left: 5px;
+	float: left;
+}
+
+input[type=text], textarea{
+	padding: 2px;
+	background-color: rgb(250, 250, 250);
+	margin: 10px;
+}
+
+textarea {
+	vertical-align: top;
+}
+
+
+
+input[type=file]{
+	margin: 10px;
+}
+
+input[type=password], #username_input{
+		max-width: 120px;
+		background-color: rgb(250, 250, 250);
+		float: left;
+		margin-top: 6px;
+		margin-left: 3px;
+		margin-bottom: 0px;
+		padding: 2px;
+}
+
+
+
+#login_button {
+	 background-color: rgb(209, 159, 228);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-top: 3px;
+    margin-left: 7px;
+    text-decoration: none;
+    cursor: pointer;
+    float: left;
+}
+
+#login_button:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+#username_form, #password_form {
+	float: left;
+	display: block;
+}
+
+
+
+@media screen and (max-width: 850px){
+		.content {
+			padding-top: 140px;
+			max-width: 80%;
+		}
+
+		#login label, #login_button {
+			padding: none;
+			margin: none;
+			float: none;
+		}
+
+		#login_button{
+			margin-bottom: 4px;
+			margin-top: 4px;
+		}
+
+		#login {
+			padding: 0;
+			margin: 0 0 0 20;
+			float: none;
+			text-align: center;
+		}
+		#username_form, #password_form {
+			float: none;
+		}
+
+		input[type=password], #username_input{
+
+			float: none;
+		}
+	}
+
+#shop_phone, #shop_address {
+	color: white;
+	font-style: italic;
+}
+
+#contact_info {
+	text-align: right;
+}
+
+.center_img {
+	display: block;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.float_right_img {
+	float:right;
+	width: 40%;
+}
+
+
+@media screen and (max-width: 850px){
+	.float_right_img {
+		float: none;
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.center_img{
+		width: 80%;
+	}
+}
+
+.feras_pet_shop  {
+	color: purple;
+}
+
+.gallery {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: auto;
+}
+
+.gallery_container{
+	float: left;
+	width: 32%;
+	height: auto;
+	margin: 3px;
+}
+
+.gallery_caption {
+	text-align: center;
+	font-size: 1em;
+	color: purple;
+
+}
+
+@media screen and (max-width: 850px){
+	.gallery_container{
+		float: none;
+		width: 80%;
+	}
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.pet_profile{
+	border: 2px solid black;
+	width: 80%;
+	margin: 20px 0;
+	position: relative;
+	z-index: 0;
+}
+
+.pet_profile img{
+	float: left;
+	width: 29%;
+}
+
+.profile_buttons{
+	float: right;
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+}
+
+
+
+
+.product {
+	border: 2px solid black;
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.product img {
+	width: 80%;
+}
+
+.product_left{
+	display: flex;
+	flex:1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
+.product_right{
+	display: flex;
+	flex:2;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.service {
+	border: 2px solid black;
+	display: flex;
+	flex-direction: row;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.service img {
+	width: 80%;
+}
+
+.service_left{
+	display: flex;
+	flex:1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 10px;
+}
+.center{
+	display: flex;
+	justify-content: center;
+}
+.service_right{
+	display: flex;
+	flex:2;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+.register_user{
+  display: flex;
+  flex:2;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+table, th, td {
+    border: 1px solid black;
+}
+
+table tr td {
+	width: 60px;
+	height: 140px;
+	text-align: center;
+}
+
+table tr td input{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.quantity_input{
+	width: 40px;
+	text-align: center;
+}
+.quantity_button{
+	width: 40px;
+}
+
+.product_info{
+	padding: 10px;
+}
+.product_add_button{
+	align-self: center;
+	padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#edit_pet_buttons{
+	float: right;
+}
+
+button {
+	background-color: purple;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+button:hover {
+	background-color: #ddd;
+    color: black;
+}
+
+.pet_info {
+	padding-left: 210px;
+	padding-bottom: 50px;
+}
+
+#register_pet_button, .button_right {
+	float: right;
+	margin-right: 20%;
+	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 850px){
+	.pet_profile img{
+		float: none;
+		width: 80%;
+	}
+	.profile_buttons {
+		position: static;
+	}
+	.pet_info {
+		padding-left: 10px;
+	}
+}
+
+
+[type="date"] {
+  background: rgb(250,250,250) black  97% 50% no-repeat ;
+  padding: 2px;
+  margin:10px;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+#delete_pet_button{
+	float: right;
+}
+
+.pet_services{
+	overflow: auto;
+}
+
+#pet_services_total{
+	width: 80%;
+	text-align: center;
+}
+
+#my_pet_services {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 15px;
+}
+
+#my_pet_services  td, #my_pet_services th {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+#my_pet_services  tr:nth-child(even){background-color: #f2f2f2;}
+
+#my_pet_services  tr:hover {background-color: #ddd;}
+
+#my_pet_services  th {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    background-color: purple;
+    color: white;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.pagination a.active {
+    background-color: purple;
+    color: white;
+    border: 1px solid purple;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination_center {
+	text-align: center;
+	max-width: 80%;
+}
