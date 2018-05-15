@@ -14,7 +14,7 @@
 | A. Button  | Valeska | Done | |
 | B. Image | Ken  | Done  | |
 | C. Link | Ken  | Done  | |
-| D. Header |   | To Do  | B, C |
+| D. Header | Ken  | Done  | B, C |
 | E.  Form Field |   | To Do | |
 | F. Register Product or Service |   | To Do  | E, A |
 | G. Footer  |   | To Do  | |
