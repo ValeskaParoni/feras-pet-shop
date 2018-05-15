@@ -12,8 +12,8 @@
 | Task | Assignee | Status | Dependencies |
 | ------------- | ------------- | ------------- | ------------- |
 | A. Button  | Valeska | Done | |
-| B. Logo | Ken  | Done  | |
-| C. Header Link |   | To Do  | |
+| B. Image | Ken  | Done  | |
+| C. Link | Ken  | Done  | |
 | D. Header |   | To Do  | B, C |
 | E.  Form Field |   | To Do | |
 | F. Register Product or Service |   | To Do  | E, A |
