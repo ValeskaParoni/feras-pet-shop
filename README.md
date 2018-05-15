@@ -11,7 +11,7 @@
 
 | Task | Assignee | Status | Dependencies |
 | ------------- | ------------- | ------------- | ------------- |
-| A. Button  |    | To Do | |
+| A. Button  | Valeska | Done | |
 | B. Logo |   | To Do  | |
 | C. Header Link |   | To Do  | |
 | D. Header |   | To Do  | B, C |
