@@ -23,7 +23,7 @@ class RegisterProductForm extends React.Component{
           </span><br/>
           <span><b>Quantidade disponível</b> <Input type="number" min={0} name="" value={0} /></span><br/>
           <b>Foto: <input type="file" name="product_picture" /></b><br/>
-          <Button name="cancelButton" onClick={this.print} text="Cancelar"/>
+          <Button name="cancelButton" onClick="" text="Cancelar"/>
           <Button name="saveButton" onClick="" text="Salvar"/>
         </form>
       </div>
