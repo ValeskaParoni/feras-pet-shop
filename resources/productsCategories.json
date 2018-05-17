@@ -1,0 +1,15 @@
+[
+	{
+		"id": 1,
+		"name": "Brinquedos",
+		"image": "images/cats-toy.jpg"
+	},{
+		"id": 2,
+		"name": "Casas, gaiolas e aquários",
+		"image": "images/hamster2.jpg"
+	},{
+		"id": 3,
+		"name": "Coleiras e acessórios",
+		"image": "images/dog-leash.jpg"
+	}
+]

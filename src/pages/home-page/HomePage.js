@@ -1,16 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../../actions'
 import Button from '../../controls/Button';
 
-/* No props
+import productCatalog from '../../../resources/productCatalog.json'
+import productsCategories from '../../../resources/productsCategories.json'
+import servicesCatalog from '../../../resources/servicesCatalog.json'
+import servicesCategories from '../../../resources/servicesCategories.json'
 
+/* No props
   TODO: add onclick function to button!
 */
+
 class HomePage extends React.Component{
   constructor (props, context){
     super(props, context);
   }
+
+  componentDidMount(){
+    this.props.setProductCatalog(productCatalog)
+    this.props.setProductsCategories(productsCategories)
+    this.props.setServicesCatalog(servicesCatalog)
+    this.props.setServicesCategories(servicesCategories)
+  }
   
   render(){
+
     return (
       <section className="content">
       <h1>O Pet Shop</h1>
@@ -22,33 +38,39 @@ class HomePage extends React.Component{
      
       <h2>Produtos oferecidos</h2>
       <p> Nossa grande seleção de produtos está aqui à espera de um clique, pronta para ser entregue a sua casa.</p>
-        
+      
+      {this.props.productsReducer.productsCategories && 
       <div className="gallery_container">
         <a href="produtos.html">
-          <img src="images/cats-toy.jpg" alt="Gatos brincando com brinquedo rosa" className="gallery"/>
+          <img src={this.props.productsReducer.productsCategories[0].image} alt={this.props.productsReducer.productsCategories[0].name} className="gallery"/>
         </a>
         <div className="gallery_caption">
-          Brinquedos
+          {this.props.productsReducer.productsCategories[0].name} 
         </div>
       </div>
-      
+      }
+
+      {this.props.productsReducer.productsCategories && 
       <div className="gallery_container">
         <a href="produtos.html">
-          <img src="images/hamster2.jpg" alt="Hamster em sua casinha de plástico" className="gallery"/>
+          <img src={this.props.productsReducer.productsCategories[1].image} alt={this.props.productsReducer.productsCategories[1].name} className="gallery"/>
         </a>
         <div className="gallery_caption">
-          Casas, gaiolas e aquários
+          {this.props.productsReducer.productsCategories[1].name} 
         </div>
        </div>
+      }
 
+      {this.props.productsReducer.productsCategories && 
        <div className="gallery_container">
         <a href="produtos.html">
-          <img src="images/dog-leash.jpg" alt="Filhote de cachorro com coleira" className="gallery"/>
+          <img src={this.props.productsReducer.productsCategories[2].image} alt={this.props.productsReducer.productsCategories[2].name} className="gallery"/>
         </a>
         <div className="gallery_caption">
-          Coleiras e acessórios 
+          {this.props.productsReducer.productsCategories[2].name}  
         </div>
        </div>
+      }
 
       <div className="clearfix"></div>
       <p> Possuimos tudo o que é necessário para o conforto e saúde do seu pet. Aqui você também encontrará <b>roupas, comida e muito mais!</b></p>
@@ -58,10 +80,13 @@ class HomePage extends React.Component{
       <p> Nossos profissionais estão prontos para atendê-lo com atenção e qualidade. Agende seu serviço agora, aqui mesmo pelo site!</p>
        <img src="images/vet.jpg" alt="Filhote de cachorro com veterinário" className="float_right_img"/><br/>
       <p><b>Nós fornecemos:</b></p>
-      <ul style={{marginLeft: 80+'px'}}><li>Banho e tosa</li>
-      <li>Consulta veterinária</li>
-      <li>Exames</li>
-      <li>Vacinas</li></ul>
+      <ul style={{marginLeft: 80+'px'}}>
+      {
+        this.props.servicesReducer.servicesCategories && this.props.servicesReducer.servicesCategories.map((category, index) => {
+          return (<li key={index}>{category.name}</li>)
+        })
+      }
+      </ul>
       <br/>
 
       <p><Button text="Saiba mais..."/></p>
@@ -75,4 +100,15 @@ class HomePage extends React.Component{
   }
 }
 
-export default HomePage;
+const mapStateToProps = (state) => {
+  return {
+    productsReducer: state.productsReducer,
+    servicesReducer: state.servicesReducer,
+  }
+}
+
+// export default HomePage;
+export default connect(
+  mapStateToProps,
+  actions
+)(HomePage);
