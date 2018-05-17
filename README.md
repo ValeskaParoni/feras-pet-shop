@@ -17,7 +17,7 @@
 | D. Header | Ken  | Done  | B, C |
 | E.  Form Field | Ken  | Done | |
 | F. Register Product or Service |   | To Do  | E, A |
-| G. Footer  |   | To Do  | |
+| G. Footer  | Elisa  | Done  | |
 | H. Change Pet and User Registry |   | To Do  |E, A |
 | I. Pet and User Register |   | To Do  | E, A |
 | J. Calendar Hour |   | To Do  | |
