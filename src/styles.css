@@ -410,6 +410,7 @@ table tr td input{
 .product_add_button{
 	align-self: center;
 	padding: 10px;
+    margin-left: 10px;
 }
 
 

@@ -13,7 +13,8 @@ class Input extends React.Component{
 
   render(){
     return (
-      <input type=this.props.type name=this.props.name id=this.props.id>
+      <input type={this.props.type} name={this.props.name} id={this.props.id} value={this.props.value} min={this.props.min} 
+      step={this.props.step}/>
     );
   }
 }
