@@ -26,7 +26,7 @@
 |M. Cart | | To Do | L, A |
 |N. Edit Product or Service | | To Do | E, A |
 |O. See Upcoming Services | | To Do | A |
-|P. Home Page| | To Do | J, A |
+|P. Home Page| Elisa | Done (add onclick to button) | J, A |
 |Q. Pet| | To Do | A|
 |R. My Pets | | To Do | Q, A |
 |S. Checkout| | To Do |A |

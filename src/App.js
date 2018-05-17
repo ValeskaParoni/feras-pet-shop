@@ -4,6 +4,7 @@ import Image from './controls/Image';
 import Link from './controls/Link';
 import Header from './controls/Header';
 import Footer from './footer/Footer'
+import HomePage from './pages/home-page/HomePage'
 import styles from './styles.css';
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
     return (
       <div>
         <Header />
+        <HomePage />
         <Footer />
       </div>
     );
