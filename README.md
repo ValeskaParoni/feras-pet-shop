@@ -20,8 +20,8 @@
 | G. Footer  | Elisa  | Done  | |
 | H. Change Pet and User Registry |   | To Do  |E, A |
 | I. Pet and User Register |   | To Do  | E, A |
-| J. Calendar Hour |   | To Do  | |
-|K. Calendar | | To Do | J |
+| J. Calendar Hour |Valeska|Doing| |
+|K. Calendar |Valeska| To Do | J |
 |L. Product | | To Do | A |
 |M. Cart | | To Do | L, A |
 |N. Edit Product or Service | | To Do | E, A |
