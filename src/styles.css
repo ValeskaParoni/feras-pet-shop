@@ -166,8 +166,8 @@ input[type=password], #username_input{
 
 
 
-#login_button {
-	 background-color: rgb(209, 159, 228);
+.login_button {
+	background-color: #94618E;
     border: none;
     color: white;
     padding: 5px 10px;

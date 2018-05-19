@@ -1,0 +1,27 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Produto X",
+            "address": "",
+            "email": "",
+            "telephone": "",
+            "isAdmin": "",
+            "picture": ""
+        },
+        {
+            "id": 2,
+            "name": "Produto X",
+            "address": "",
+            "email": "",
+            "telephone": "",
+            "isAdmin": "",
+            "picture": ""
+        }
+
+    ],
+
+    "active_user": {
+        "id": 0
+    }
+}
