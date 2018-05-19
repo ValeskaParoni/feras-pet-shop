@@ -13,7 +13,7 @@ html {
 }
 
 footer {
-    background-color: purple;
+    background-color: #49274A;
     padding: 10px;
     position: absolute;
     bottom: 0;
@@ -24,7 +24,7 @@ footer {
 }
 
 header {
-	background-color: purple;
+	background-color: #49274A;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -58,7 +58,7 @@ nav a:hover {
 }
 
 b {
-	color: purple;
+	color: #49274A;
 }
 
 #username {
@@ -96,7 +96,7 @@ b {
 }
 
 h1, h2 {
-	color: purple;
+	color: #49274A;
 	margin: 15px 0;
 }
 
@@ -261,7 +261,7 @@ input[type=password], #username_input{
 }
 
 .feras_pet_shop  {
-	color: purple;
+	color: #49274A;
 }
 
 .gallery {
@@ -280,7 +280,7 @@ input[type=password], #username_input{
 .gallery_caption {
 	text-align: center;
 	font-size: 1em;
-	color: purple;
+	color: #49274A;
 
 }
 
@@ -430,7 +430,7 @@ table tr td input{
 }
 
 button {
-	background-color: purple;
+	background-color: #49274A;
     border: none;
     color: white;
     padding: 10px 15px;
@@ -517,7 +517,7 @@ button:hover {
     padding-top: 7px;
     padding-bottom: 7px;
     text-align: left;
-    background-color: purple;
+    background-color: #49274A;
     color: white;
 }
 
@@ -535,9 +535,9 @@ button:hover {
 }
 
 .pagination a.active {
-    background-color: purple;
+    background-color: #49274A;
     color: white;
-    border: 1px solid purple;
+    border: 1px solid #49274A;
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
