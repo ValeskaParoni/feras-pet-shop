@@ -14,9 +14,9 @@
 | A. Button  | Valeska | Done | |
 | B. Image | Ken  | Done  | |
 | C. Link | Ken  | Done  | |
-| D. Header | Ken  | Done  | B, C |
+| D. Header | Elisa  | In progress  | B, C |
 | E.  Form Field | Ken  | Needs Fixing | |
-| F. Register Product or Service | Elisa | In progress  | E, A |
+| F. Register Product or Service | Elisa | On Hold | E, A |
 | G. Footer  | Elisa  | Done  | |
 | H. Change Pet and User Registry |   | To Do  |E, A |
 | I. Pet and User Register |   | To Do  | E, A |
