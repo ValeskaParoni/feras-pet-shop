@@ -89,7 +89,6 @@ class HomePage extends React.Component{
       </ul>
       <br/>
 
-      <p><Button text="Saiba mais..."/></p>
 
       <br/> <br/> <br/> <br/> <br/>
       <div className="clearfix"></div>

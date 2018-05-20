@@ -15,17 +15,6 @@ import * as actions from '../actions'
 
 /*
 Update nav bar as needed!
-
-Header:
-state:
-if logged in, more links
-  GET USERNAME
-
-  if(admin )
-
-  else
-else
-only home link plus log in
 */
 
 class Header extends React.Component{
@@ -33,12 +22,17 @@ class Header extends React.Component{
     super(props, context);
   }
 
-  logoff(){
+  //Calls logoff function from store
+  logoff = () => {
     this.props.logoff();
   }
 
-  render(){
 
+  render(){
+    /*Renders header with links if user is logged in
+        -links differ from admin to regular user
+      Renders login form is user isnt loggedin
+    */
     if(this.props.loggedin){
       if(this.props.isAdmin){
             return (
@@ -54,7 +48,7 @@ class Header extends React.Component{
                       <span id="username">Usuário:<br/> {this.props.userName}</span>
                       <NavLink to="/reports" id="link_adm_users">Relatórios gerenciais</NavLink>
                       <NavLink to="/updateUserProfile">Alterar cadastro</NavLink>
-                      <NavLink to="/">Sair</NavLink>
+                      <NavLink to="/" onClick={this.logoff}>Sair</NavLink>
                     </div>
               </nav>
               </header>
@@ -72,7 +66,7 @@ class Header extends React.Component{
                       <span id="username">Usuário:<br/>{this.props.userName}</span>
                       <NavLink to="/shoppingCart" id="link_change_user">Carrinho de compras</NavLink>
                       <NavLink to="/updateUserProfile">Alterar cadastro</NavLink>
-                      <NavLink to="/">Sair</NavLink>
+                      <NavLink to="/" onClick={this.logoff}>Sair</NavLink>
                     </div>
                 </nav>
               </header>

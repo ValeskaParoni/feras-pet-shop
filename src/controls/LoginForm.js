@@ -25,7 +25,6 @@ class LoginForm extends React.Component{
 
   validateLogin(){
     //check if username plus password is in "database"
-    console.log(this.props);
     for (let i = 0; i < registeredUsers.users.length; i++) {
         if(registeredUsers.users[i].email === this.state.username && registeredUsers.users[i].password === this.state.password){
             let activeUser = {
