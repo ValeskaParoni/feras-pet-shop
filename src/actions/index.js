@@ -8,19 +8,32 @@ export const setProductCatalog = (productCatalog) => {
 export const setProductsCategories = (productsCategories) => {
 	return {
 		type: 'SET_PRODUCTS_CATEGORIES',
-		productsCategories,
+		productsCategories
 	}
 }
 
 export const setServicesCatalog = (servicesCatalog) => {
 	return {
 		type: 'SET_SERVICES_CATALOG',
-		servicesCatalog,
+		servicesCatalog
 	}
 }
 export const setServicesCategories = (servicesCategories) => {
 	return {
 		type: 'SET_SERVICES_CATEGORIES',
-		servicesCategories,
+		servicesCategories
+	}
+}
+
+export const setActiveUser = (activeUser) => {
+	return {
+		type:'SET_ACTIVE_USER',
+		activeUser
+	}
+}
+
+export const logoff = () => {
+	return {
+		type:'LOG_OFF'
 	}
 }

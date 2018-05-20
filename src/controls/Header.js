@@ -8,6 +8,11 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
+
+import { connect } from 'react-redux';
+
+import * as actions from '../actions'
+
 /*
 Update nav bar as needed!
 
@@ -26,13 +31,16 @@ only home link plus log in
 class Header extends React.Component{
   constructor (props, context){
     super(props, context);
-    this.state = {loggedIn: false, isAdmin: true};
+  }
+
+  logoff(){
+    this.props.logoff();
   }
 
   render(){
 
-    if(this.state.loggedIn){
-      if(this.state.isAdmin){
+    if(this.props.loggedin){
+      if(this.props.isAdmin){
             return (
               <header>
                 <Image src='./images/alternatelogo.png' alt='Feras Pet Shop' id='logo_img'/>
@@ -40,12 +48,13 @@ class Header extends React.Component{
                     <NavLink to="/" id='home_link'>Home</NavLink>
                     <NavLink to='/products'>Produtos</NavLink>
                     <NavLink to='/services'>Serviços</NavLink>
+                    <NavLink to='/registerUser'>Cadastrar Usuário</NavLink>
                
                     <div id="logged_user_options">
-                      <span id="username">Usuário:<br/> admin123</span>
+                      <span id="username">Usuário:<br/> {this.props.userName}</span>
                       <NavLink to="/reports" id="link_adm_users">Relatórios gerenciais</NavLink>
                       <NavLink to="/updateUserProfile">Alterar cadastro</NavLink>
-                      <a href="index_adm.html">Sair</a>
+                      <NavLink to="/">Sair</NavLink>
                     </div>
               </nav>
               </header>
@@ -60,10 +69,10 @@ class Header extends React.Component{
                     <NavLink to='/services'>Serviços</NavLink>
                     <NavLink to='/mypets'>Meus Pets</NavLink>
                     <div id="logged_user_options">
-                      <span id="username">Usuário:<br/> admin123</span>
-                      <NavLink to="/shoppingCart">Carrinho de compras</NavLink>
+                      <span id="username">Usuário:<br/>{this.props.userName}</span>
+                      <NavLink to="/shoppingCart" id="link_change_user">Carrinho de compras</NavLink>
                       <NavLink to="/updateUserProfile">Alterar cadastro</NavLink>
-                      <a href="index_adm.html">Sair</a>
+                      <NavLink to="/">Sair</NavLink>
                     </div>
                 </nav>
               </header>
@@ -82,5 +91,14 @@ class Header extends React.Component{
     }
   }
 }
+const mapStateToProps = state => {
+  return { userName: state.usersReducer.userName, userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin, 
+    loggedin: state.usersReducer.loggedin };
+};
 
-export default Header;
+
+
+export default connect(
+  mapStateToProps,
+  actions
+)(Header);

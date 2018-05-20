@@ -5,15 +5,15 @@ const productsReducer = (state = {}, action) => {
 			return {
 				...state,
 				productCatalog: action.productCatalog,
-			}
+			};
 
 		case 'SET_PRODUCTS_CATEGORIES':
 			return {
 				...state,
 				productsCategories: action.productsCategories,
-			}
+			};
 		default:
-			return state
+			return state;
 	}
 }
 

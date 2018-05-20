@@ -5,14 +5,14 @@ const servicesReducer = (state = {}, action) => {
 			return {
 				...state,
 				servicesCatalog: action.servicesCatalog,
-			}
+			};
 		case 'SET_SERVICES_CATEGORIES':
 			return {
 				...state,
 				servicesCategories: action.servicesCategories,
-			}
+			};
 		default:
-			return state
+			return state;
 	}
 }
 
