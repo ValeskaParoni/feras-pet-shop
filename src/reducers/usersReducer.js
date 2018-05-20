@@ -1,9 +1,12 @@
+import registeredUsers from '../../resources/registeredUsers.json'
+
+
 const initialState = {
   "loggedin": false,
   "userId": -1,
   "isAdmin": false,
-  "userName": ""
-
+  "userName": "",
+  "registeredUsers": registeredUsers
 };
 
 
@@ -34,12 +37,25 @@ const usersReducer = (state = initialState, action) => {
                     "isAdmin": false,
                     "userName": ""
 
-                    
-                    }
-    
+                    }    
                 );
+
+        case 'ADD_NEW_USER':
+            return (
+                    {
+                        ...state,
+                        "registeredUsers": [
+                            ...state.registeredUsers,
+                            action.newUser
+                        ]
+                    }
+
+                );
+
+
+
         default:
-         
+            console.log(state);
             return state;
     }
 }

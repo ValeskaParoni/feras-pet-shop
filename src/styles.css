@@ -139,7 +139,7 @@ p {
 	float: left;
 }
 
-input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea{
+input[type=text], input[type=tel], input[type=email], input[type=checkbox], input[type=password], textarea{
 	padding: 2px;
 	margin-left: 10px;
     margin-top: 5px;
@@ -156,7 +156,7 @@ input[type=file]{
 	margin: 10px;
 }
 
-input[type=password], #login_email{
+#login_password, #login_email{
 		max-width: 120px;
 		background-color: rgb(250, 250, 250);
 		float: left;

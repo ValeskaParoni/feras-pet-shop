@@ -1,25 +1,24 @@
-{
-    "users": [
-        {
-            "id": 1,
-            "name": "admin123",
-            "password": "pass123",
-            "address": "Adminlândia, 289",
-            "email": "admin@email.com",
-            "telephone": "(16)9999-9999",
-            "isAdmin": true,
-            "picture": ""
-        },
-        {
-            "id": 2,
-            "name": "cliente",
-            "password": "pass123",
-            "address": "Rua do Trabalho, 55",
-            "email": "cliente@email.com",
-            "telephone": "(45)9124-3242",
-            "isAdmin": false,
-            "picture": ""
-        }
 
-    ]
-}
+[
+    {
+        "id": 1,
+        "name": "admin123",
+        "password": "pass123",
+        "address": "Adminlândia, 289",
+        "email": "admin@email.com",
+        "telephone": "(16)9999-9999",
+        "isAdmin": true,
+        "picture": ""
+    },
+    {
+        "id": 2,
+        "name": "cliente",
+        "password": "pass123",
+        "address": "Rua do Trabalho, 55",
+        "email": "cliente@email.com",
+        "telephone": "(45)9124-3242",
+        "isAdmin": false,
+        "picture": ""
+    }
+
+]

@@ -4,8 +4,6 @@
 
 import * as actions from '../actions'
 
-import registeredUsers from '../../resources/registeredUsers.json'
-
 /*
 Login form: deals with user log-in
 */
@@ -20,21 +18,32 @@ class LoginForm extends React.Component{
 
   validateLogin(){
     //check if username plus password is in "database"
-    for (let i = 0; i < registeredUsers.users.length; i++) {
-        if(registeredUsers.users[i].email === this.state.username && registeredUsers.users[i].password === this.state.password){
+
+    if(this.state.username.length<=1 || this.state.password.length<=1){
+
+      alert("Por favor, preencha todos os campos")
+
+    }else{
+
+      for (let i = 0; i < this.props.registeredUsers.length; i++) {
+        if(this.props.registeredUsers[i].email === this.state.username && this.props.registeredUsers[i].password === this.state.password){
             let activeUser = {
               "loggedin": true,
-              "userId": registeredUsers.users[i].id,
-              "isAdmin": registeredUsers.users[i].isAdmin,
-              "userName": registeredUsers.users[i].name
+              "userId": this.props.registeredUsers[i].id,
+              "isAdmin": this.props.registeredUsers[i].isAdmin,
+              "userName": this.props.registeredUsers[i].name
 
             }
             this.props.setActiveUser(activeUser);
             return;
         }
-    } 
+   
+      }
 
-    alert("Email e senha incorretos!");
+      alert("Email e senha incorretos!"); 
+
+    }
+
 
   }
 
@@ -66,7 +75,7 @@ class LoginForm extends React.Component{
             </div>
             <div id="password_form"> 
                 <label>Senha: </label>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
+                <input type="password" id="login_password" name="password" value={this.state.password} onChange={this.handleChange} />
                 <br/>
             </div>
           <Button buttonClass="login_button" text="Login" id="login_button" onClick={this.handleSubmit}/>
@@ -75,9 +84,11 @@ class LoginForm extends React.Component{
   }
 }
 
-
+const mapStateToProps = state => {
+  return { registeredUsers: state.usersReducer.registeredUsers };
+};
 
 export default connect(
-  null,
+  mapStateToProps,
   actions
 )(LoginForm);

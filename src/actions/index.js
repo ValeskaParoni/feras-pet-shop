@@ -37,3 +37,10 @@ export const logoff = () => {
 		type:'LOG_OFF'
 	}
 }
+
+export const addNewUser = (newUser) => {
+	return {
+		type: "ADD_NEW_USER",
+		newUser
+	}
+}
