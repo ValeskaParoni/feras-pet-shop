@@ -6,6 +6,7 @@ import Header from './controls/Header';
 import Footer from './footer/Footer'
 import HomePage from './pages/home-page/HomePage'
 import MyPets from './pages/my-pets/MyPets'
+import RegisterUser from './pages/register-user/RegisterUser'
 import RegisterProductForm from './product-form/RegisterProductForm'
 import styles from './styles.css';
 import {
@@ -31,6 +32,7 @@ class App extends React.Component {
           <Header />
           <Route exact path="/" component={HomePage}/>
           <Route path="/mypets" component={MyPets}/>
+          <Route path="/registerUser" component={RegisterUser}/>
           <Footer />
         </div>
       </HashRouter>
@@ -39,4 +41,3 @@ class App extends React.Component {
 }
 
 export default App;
-

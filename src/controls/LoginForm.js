@@ -7,13 +7,8 @@ import * as actions from '../actions'
 import registeredUsers from '../../resources/registeredUsers.json'
 
 /*
-uses from registeredUsers:
-    loggedin
-    name
-    id
-    isAdmin
+Login form: deals with user log-in
 */
-
 class LoginForm extends React.Component{
   constructor (props, context){
     super(props, context);
@@ -66,7 +61,7 @@ class LoginForm extends React.Component{
         <form id="login">
              <div id="username_form"> 
                 <label>Email:</label>
-                 <input type="email" name="username" value={this.state.username} onChange={this.handleChange} />
+                 <input type="email" id ="login_email" name="username" value={this.state.username} onChange={this.handleChange} />
                 <br/>
             </div>
             <div id="password_form"> 

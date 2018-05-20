@@ -139,10 +139,11 @@ p {
 	float: left;
 }
 
-input[type=text], textarea{
+input[type=text], input[type=tel], input[type=email], input[type=checkbox], textarea{
 	padding: 2px;
-	background-color: rgb(250, 250, 250);
-	margin: 10px;
+	margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 textarea {
@@ -155,7 +156,7 @@ input[type=file]{
 	margin: 10px;
 }
 
-input[type=password], [type=email]{
+input[type=password], #login_email{
 		max-width: 120px;
 		background-color: rgb(250, 250, 250);
 		float: left;
@@ -166,7 +167,11 @@ input[type=password], [type=email]{
 		padding: 2px;
 }
 
-
+.cancel_button{
+    margin-left: 80px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
 
 .login_button {
 	background-color: #94618E;
