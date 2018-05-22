@@ -6,13 +6,9 @@ import Button from '../controls/Button';
 import {
   NavLink
 } from "react-router-dom";
+import {withRouter} from 'react-router-dom'
 
-//TODO
-//WHAT TO DO WHEN FORM IS SUBMITTED?
-//VALIDATE FORM INPUT
-//PICTURE
 /*
-On click functions still missing
 props:
   this.props.formType - "pet" for registering a pet, "client" for registering a client
 */
@@ -46,23 +42,41 @@ class RegisterPetClient extends React.Component{
     });
   }
 
-  handleSubmitUser(event) {
+  handleSubmitUser = (event) => {
     event.preventDefault();
-    this.registerUser();   
+    if(this.validate())
+      this.previewFile(); 
+
   }
 
 
+  //loads file
+  previewFile = () => {
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+    var message    = document.querySelector('#file_loading_message');
 
+
+    reader.addEventListener("load", () => {
+      this.state.clientPicture = reader.result;
+      this.registerUser();
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+      message.innerHTML = "Carregando imagem...";
+    }else{
+      this.state.clientPicture = "";
+      this.registerUser();
+    }
+  }
+
+
+  //adds new user to redux
   registerUser = () => {
     //get id
-    console.log("id");
-    console.log(this.props.registeredUsers.length);
     //for now, using length+1 as id for new user (as users can't be deleted)
     let id = this.props.registeredUsers.length+1;
-
-    //validate
-    //check if email is unique
-    //get img
 
     let newUser = {
         "id": id,
@@ -70,12 +84,45 @@ class RegisterPetClient extends React.Component{
         "password": this.state.clientPassword,
         "address": this.state.clientAddress,
         "email": this.state.clientEmail,
-        "telephone": this.state.clientPicture,
+        "telephone": this.state.clientPhoneNumber,
         "isAdmin": this.state.clientIsAdmin,
-        "picture": ""
+        "picture": this.state.clientPicture
     }
     this.props.addNewUser(newUser);
-    this.state.formSubmitted = true;
+    
+    //changes page from form into success message
+    this.props.history.push("/userSuccess");
+
+  }
+
+  //Validates input
+  //returns true if input is valid
+  validate = () => {
+    let error = false;
+
+    if(this.state.clientName.length < 1)
+      error = true;
+
+    if(this.state.clientPassword.length < 1)
+      error = true;
+
+    if(this.state.clientAddress.length < 1)
+      error = true;
+
+    if(!document.getElementById("client_email").validity.valid){
+      alert("Email preenchido incorretamente!");
+      return false;
+    }
+
+    if(this.state.clientPhoneNumber.length < 1)
+      error = true;
+
+    if(error){
+      alert("Todos os campos devem estar preenchidos!");
+      return false;
+    }else{
+      return true;
+    }
 
   }
 
@@ -101,32 +148,24 @@ class RegisterPetClient extends React.Component{
               </div>
         );
     }else{
-        
-
-        if(this.state.formSubmitted){
-          return(
-              <div>
-                <p>Usuário criado com sucesso!</p>
-              </div>
-            );
-        }
 
        return(
             <div>
               <h2>Cadastrar usuário</h2>
-              <div>
+              <div id="user_form">
                 <div>
                   <form>
-                    <b>Nome:</b> <input type="text" name="clientName" value={this.state.clientName} onChange={this.handleChange} /><br/>
+                    <b>Nome:</b> <input type="text" name="clientName" value={this.state.clientName} onChange={this.handleChange}/><br/>
                     <b>Endereço:</b> <input type="text" name="clientAddress" value={this.state.clientAddress} onChange={this.handleChange} /><br/>
-                    <b>Email:</b> <input type="email" name="clientEmail" value={this.state.clientEmail} onChange={this.handleChange} /><br/>
+                    <b>Email:</b> <input id="client_email" type="email" name="clientEmail" value={this.state.clientEmail} onChange={this.handleChange} /><br/>
                     <b>Senha:</b> <input type="password" name="clientPassword" value={this.state.clientPassword} onChange={this.handleChange} /><br/>
                     <b>Telefone:</b> <input type="tel" name="clientPhoneNumber" value={this.state.clientPhoneNumber} onChange={this.handleChange} /><br/>
                     <b>Administrador: </b> <input type="checkbox" name="clientIsAdmin" value={this.state.clientIsAdmin} onChange={this.handleChange} /><br/>
-                    <b>Foto: <input type="file" name="clientPicture" accept="image/*" value={this.state.clientPicture} onChange={this.handleChange} /></b><br/>
+                    <b>Foto: <input type="file" name="clientPicture" accept="image/*" onChange={this.handleChange} /></b>
+                      <span id="file_loading_message"></span><br/>
                    <div id="new_pet_buttons">
                       <NavLink to="/" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
-                      <Button text="Confirmar" onClick={this.registerUser}/>
+                      <Button text="Confirmar" onClick={this.handleSubmitUser}/>
                     </div>
                   </form>
                 </div>
@@ -150,4 +189,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(RegisterPetClient);
+)(withRouter(RegisterPetClient));
