@@ -18,8 +18,8 @@
 | E.  Form Field | Ken  | Done | |
 | F. Register Product or Service |  | To Do | E, A |
 | G. Footer  | Elisa  | Done  | |
-| H. Change Pet and User Registry | Elisa  | To Do  |E, A |
-| I. Pet and User Register | Elisa  | To Do  | E, A |
+| H. Change Pet and User Registry | Elisa  | In progress  |E, A |
+| I. Pet and User Register | Elisa  | In progress  | E, A |
 | J. Calendar Hour |Valeska|Doing| |
 |K. Calendar |Valeska| To Do | J |
 |L. Product | | To Do | A |
@@ -27,8 +27,8 @@
 |N. Edit Product or Service | | To Do | E, A |
 |O. See Upcoming Services | | To Do | A |
 |P. Home Page| Elisa | Done | J, A |
-|Q. Pet| | To Do | A|
-|R. My Pets | | To Do | Q, A |
+|Q. Pet| Elisa | To Do | A|
+|R. My Pets | Elisa | To Do | Q, A |
 |S. Checkout| | To Do |A |
 |T. Service | | To Do | A|
 |U. Products or Services Pages | | To Do | L, T, A |
