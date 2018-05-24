@@ -52,6 +52,23 @@ const usersReducer = (state = initialState, action) => {
 
                 );
 
+        case 'EDIT_USER':
+               return { 
+                    ...state, 
+                    userName: action.updatedUser.name,
+                    registeredUsers: state.registeredUsers.map(
+                       (user, i) => {
+                            //SHOULD BE CHANGED IF ID ISN'T INDEX+1
+                            if(i === action.updatedUser.id-1){
+                                return {...user, ...action.updatedUser};
+                            }
+                            else {
+                                return user;
+                            }
+
+                        }
+                   )
+                }
 
 
         default:

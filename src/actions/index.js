@@ -44,3 +44,10 @@ export const addNewUser = (newUser) => {
 		newUser
 	}
 }
+
+export const updateUser = (updatedUser) => {
+	return {
+		type: "EDIT_USER",
+		updatedUser
+	}
+}

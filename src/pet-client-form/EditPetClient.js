@@ -12,21 +12,15 @@ import {withRouter} from 'react-router-dom'
 props:
   this.props.formType - "pet" for registering a pet, "client" for registering a client
 */
-class RegisterPetClient extends React.Component{
+class EditPetClient extends React.Component{
   constructor (props, context){
     super(props, context);
 
-    this.state =  {
-                    clientName: '', 
-                    clientAddress: '',
-                    clientEmail: '',
-                    clientPassword: '',
-                    clientPhoneNumber: '',
-                    clientIsAdmin: '',
-                    clientPicture: '',
-                    formSubmitted: false
-
-                  };
+    if(this.props.formType=="client"){
+      //get client data
+      //should change this if id isn't position+1 any longer
+      this.state = {currentUser: this.props.registeredUsers[this.props.userId-1]};
+    }
 
     this.handleChange = this.handleChange.bind(this);
   }
@@ -36,10 +30,20 @@ class RegisterPetClient extends React.Component{
     const value = target.value;
     const name = target.name;
 
+    if(this.props.formType=="client"){  
+      
+      var currentUser = {...this.state.currentUser}
+      currentUser[name] = value;
+      this.setState({currentUser});
+    
+    }else{
+        this.setState({
+          [name]: value
+        });
+    }
 
-    this.setState({
-      [name]: value
-    });
+
+    
   }
 
   handleSubmitUser = (event) => {
@@ -49,7 +53,6 @@ class RegisterPetClient extends React.Component{
 
   }
 
-
   //loads file
   previewFile = () => {
     var file    = document.querySelector('input[type=file]').files[0];
@@ -58,65 +61,60 @@ class RegisterPetClient extends React.Component{
 
 
     reader.addEventListener("load", () => {
-      this.state.clientPicture = reader.result;
-      this.registerUser();
+      this.state.currentUser.picture = reader.result;
+      this.updateUser();
     }, false);
 
     if (file) {
       reader.readAsDataURL(file);
       message.innerHTML = "Carregando imagem...";
     }else{
-      this.state.clientPicture = "images/usuario.png";
-      this.registerUser();
+      this.updateUser();
     }
   }
 
 
-  //adds new user to redux
-  registerUser = () => {
-    //get id
-    //for now, using length+1 as id for new user (as users can't be deleted)
-    let id = this.props.registeredUsers.length+1;
-
-    let newUser = {
-        "id": id,
-        "name": this.state.clientName,
-        "password": this.state.clientPassword,
-        "address": this.state.clientAddress,
-        "email": this.state.clientEmail,
-        "telephone": this.state.clientPhoneNumber,
-        "isAdmin": this.state.clientIsAdmin,
-        "picture": this.state.clientPicture
+  //edits user in redux
+  updateUser = () => {
+    
+    let updatedUser = {
+        "id": this.state.currentUser.id,
+        "name": this.state.currentUser.name,
+        "password": this.state.currentUser.password,
+        "address": this.state.currentUser.address,
+        "email": this.state.currentUser.email,
+        "telephone": this.state.currentUser.telephone,
+        "isAdmin": this.state.currentUser.isAdmin,
+        "picture": this.state.currentUser.picture
     }
-    this.props.addNewUser(newUser);
+    this.props.updateUser(updatedUser);
     
     //changes page from form into success message
-    this.props.history.push("/userSuccess");
+    this.props.history.push("/dataUpdated");
 
   }
 
-  //checks if email is unique
+    //checks if email is unique
   checkEmail = () => {
     for (let i = 0; i < this.props.registeredUsers.length; i++)
-      if(this.state.clientEmail == this.props.registeredUsers[i].email)
+      if(this.state.currentUser.email == this.props.registeredUsers[i].email && i != this.state.currentUser.id )
         return false;
 
     return true;
   }
-
 
   //Validates input
   //returns true if input is valid
   validate = () => {
     let error = false;
 
-    if(this.state.clientName.length < 1)
+    if(this.state.currentUser.name.length < 1)
       error = true;
 
-    if(this.state.clientPassword.length < 1)
+    if(this.state.currentUser.password.length < 1)
       error = true;
 
-    if(this.state.clientAddress.length < 1)
+    if(this.state.currentUser.address.length < 1)
       error = true;
 
     if(!document.getElementById("client_email").validity.valid){
@@ -124,12 +122,7 @@ class RegisterPetClient extends React.Component{
       return false;
     }
 
-    if(!this.checkEmail()){
-      alert("Email já em uso por outra conta!");
-      return false;
-    }
-
-    if(this.state.clientPhoneNumber.length < 1)
+    if(this.state.currentUser.telephone.length < 1)
       error = true;
 
     if(error){
@@ -166,17 +159,17 @@ class RegisterPetClient extends React.Component{
 
        return(
             <div>
-              <h2>Cadastrar usuário</h2>
-              <div id="user_form">
+              <h2>Editar usuário</h2>
+              <div style={{display: 'flex', flexDirection: 'row'}}>
+                <img src={this.state.currentUser.picture} alt="Foto do usuário" style={{width: '20%', height: '20%'}}/>
                 <div>
                   <form>
-                    <b>Nome:</b> <input type="text" name="clientName" value={this.state.clientName} onChange={this.handleChange}/><br/>
-                    <b>Endereço:</b> <input type="text" name="clientAddress" value={this.state.clientAddress} onChange={this.handleChange} /><br/>
-                    <b>Email:</b> <input id="client_email" type="email" name="clientEmail" value={this.state.clientEmail} onChange={this.handleChange} /><br/>
-                    <b>Senha:</b> <input type="password" name="clientPassword" value={this.state.clientPassword} onChange={this.handleChange} /><br/>
-                    <b>Telefone:</b> <input type="tel" name="clientPhoneNumber" value={this.state.clientPhoneNumber} onChange={this.handleChange} /><br/>
-                    <b>Administrador: </b> <input type="checkbox" name="clientIsAdmin" value={this.state.clientIsAdmin} onChange={this.handleChange} /><br/>
-                    <b>Foto: <input type="file" name="clientPicture" accept="image/*" onChange={this.handleChange} /></b>
+                    <b>Nome:</b> <input type="text" name="name" value={this.state.currentUser.name} onChange={this.handleChange}/><br/>
+                    <b>Endereço:</b> <input type="text" name="address" value={this.state.currentUser.address} onChange={this.handleChange} /><br/>
+                    <b>Email:</b> <input id="client_email" type="email" name="email" value={this.state.currentUser.email} onChange={this.handleChange} /><br/>
+                    <b>Senha:</b> <input type="password" name="password" value={this.state.currentUser.password} onChange={this.handleChange} /><br/>
+                    <b>Telefone:</b> <input type="tel" name="telephone" value={this.state.currentUser.telephone} onChange={this.handleChange} /><br/>
+                    <b>Foto: <input type="file" name="picture" accept="image/*" onChange={this.handleChange} /></b>
                       <span id="file_loading_message"></span><br/>
                    <div id="new_pet_buttons">
                       <NavLink to="/" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
@@ -197,11 +190,15 @@ class RegisterPetClient extends React.Component{
 
 
 const mapStateToProps = state => {
-  return { registeredUsers: state.usersReducer.registeredUsers };
-};
+  return { registeredUsers: state.usersReducer.registeredUsers,
+           loggedin: state.usersReducer.loggedin,
+           userId: state.usersReducer.userId,
+           userName: state.usersReducer.userName
+  };
+}
 
 
 export default connect(
   mapStateToProps,
   actions
-)(withRouter(RegisterPetClient));
+)(withRouter(EditPetClient));
