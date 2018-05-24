@@ -44,3 +44,10 @@ export const addNewUser = (newUser) => {
 		newUser
 	}
 }
+
+export const addNewProduct = (newProduct) =>{
+	return {
+		type: "REGISTER_PRODUCT",
+		newProduct
+	}
+}

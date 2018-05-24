@@ -1,17 +1,22 @@
-const productsReducer = (state = {}, action) => {
+import registeredProducts from '../../resources/productCatalog.json'
+const initialState = {
+	"registeredProducts" : registeredProducts
+}
+const productsReducer = (state = initialState, action) => {
 
 	switch(action.type) {
-		case 'SET_PRODUCT_CATALOG':
-			return {
-				...state,
-				productCatalog: action.productCatalog,
-			};
+		case 'REGISTER_PRODUCT':
+		console.log(state.registeredProducts)
+		return (
+						{
+								...state,
+								"registeredProducts": [
+										...state.registeredProducts,
+										action.newProduct
+								]
+						}
+				);
 
-		case 'SET_PRODUCTS_CATEGORIES':
-			return {
-				...state,
-				productsCategories: action.productsCategories,
-			};
 		default:
 			return state;
 	}

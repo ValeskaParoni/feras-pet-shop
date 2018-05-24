@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../controls/Input'
+//import Input from '../controls/Input'
 import Button from '../controls/Button'
 import {
   NavLink
@@ -13,19 +13,20 @@ class RegisterProductForm extends React.Component{
   constructor (props, context){
     super(props, context);
     this.state = {
-                    product_name: '',
-                    product_description: '',
-                    product_type: '',
-                    product_price: 0,
-                    product_quantity: 0,
-                    product_picture: '',
-                    form_submitted: ''
+                    productName: '',
+                    productDescription: '',
+                    productType: '',
+                    productPrice: 0,
+                    productQuantity: 0,
+                    productPicture: '',
+                    formSubmitted: '',
+
     };
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event) {
    const target = event.target;
-   console.log(target);
+  //   console.log(target);
    const value = target.value;
    const name = target.name;
 
@@ -33,20 +34,91 @@ class RegisterProductForm extends React.Component{
    this.setState({
      [name]: value
    });
- }
+  }
+  handleSubmitProduct = (event) => {
+    event.preventDefault();
+    if(this.validate())
+      this.previewFile();
+    console.log('sending')
+  }
+  previewFile = () => {
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+    var message    = document.querySelector('#file_loading_message');
+
+
+    reader.addEventListener("load", () => {
+      this.state.productPicture = reader.result;
+      this.registerProduct();
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+      message.innerHTML = "Carregando imagem...";
+    }else{
+      this.state.productPicture = "";
+      this.registerProduct();
+    }
+  }
+
+  registerProduct = () => {
+    let id = this.props.registeredProducts.length+1;
+    console.log(id)
+    let newProduct = {
+        "id": id,
+        "productName": this.state.productName,
+        "productDescription": this.state.productDescription,
+        "productType": this.state.productType,
+        "productPrice": this.state.productPrice,
+        "productQuantity": this.state.productQuantity,
+        "productPicture": this.state.productPicture
+    }
+    this.props.addNewProduct(newProduct);
+
+    //changes page from form into success message
+    //this.props.history.push("/productSuccess");
+
+  }
+
+  validate = () => {
+    let error = false;
+
+    if(this.state.productName.length < 1)
+      error = true;
+
+    if(this.state.productDescription.length < 1)
+      error = true;
+
+    if(this.state.productType.length < 1)
+      error = true;
+
+    if(this.state.productPrice.value < 0)
+      error = true
+
+    if(this.state.productQuantity.value < 0)
+      error = true;
+
+    if(error){
+      alert("Todos os campos devem estar preenchidos!");
+      return false;
+    }else{
+      return true;
+    }
+
+  }
   render(){
     return (
       <div>
         <form>
           <b><h2>Cadastrar produto/serviço</h2></b>
-          <span><b>Nome:</b> <input type="text" name="product_name" value={this.state.product_name} onChange={this.handleChange}/> </span><br/>
-          <span><b>Descrição:</b> <textarea name="product_description" rows = "10" cols="40" onChange={this.handleChange} value={this.state.product_description}/></span><br/>
-          <span><b>Categoria:</b> <input type="text" name="product_type" value={this.state.product_type} onChange={this.handleChange}/></span><br/>
-          <span><b>Preço:</b> <input type="number" min={0} step="any" name="product_price" value={this.state.product_price} onChange={this.handleChange}/></span><br/><br/>
-          <span><b>Quantidade disponível</b> <input type="number" min={0} name="" value={this.state.product_quantity} onChange={this.handleChange}/></span><br/>
-          <b>Foto: <input type="file" name="product_picture" accept="image/*" onChange={this.handleChange}/>></b><br/>
-          //<NavLink to="/" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
-          <Button name="saveButton" onClick="" text="Salvar"/>
+          <span><b>Nome:</b> <input type="text" name="productName" value={this.state.productName} onChange={this.handleChange}/> </span><br/>
+          <span><b>Descrição:</b> <textarea name="productDescription" rows = "10" cols="40" onChange={this.handleChange} value={this.state.product_description}/></span><br/>
+          <span><b>Categoria:</b> <input type="text" name="productType" value={this.state.productType} onChange={this.handleChange}/></span><br/>
+          <span><b>Preço:</b> <input type="number" min={0} step="any" name="productPrice" value={this.state.productPrice} onChange={this.handleChange}/></span><br/><br/>
+          <span><b>Quantidade disponível</b> <input type="number" min={0} name="productQuantity" value={this.state.productQuantity} onChange={this.handleChange}/></span><br/>
+          <b>Foto: <input type="file" name="productPicture" accept="image/*" onChange={this.handleChange}/></b><br/>
+          <NavLink to="/" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
+          <Button name="saveButton" onClick={this.handleSubmitProduct} text="Salvar"/>
         </form>
       </div>
     );
@@ -55,7 +127,7 @@ class RegisterProductForm extends React.Component{
 
 const mapStateToProps = state => {
   return { userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
-    loggedin: state.usersReducer.loggedin };
+    loggedin: state.usersReducer.loggedin, registeredProducts: state.productsReducer.registeredProducts};
 };
 
 // export default HomePage;
