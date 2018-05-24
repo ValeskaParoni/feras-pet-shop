@@ -43,7 +43,7 @@ class Header extends React.Component{
                     <NavLink to='/products'>Produtos</NavLink>
                     <NavLink to='/services'>Serviços</NavLink>
                     <NavLink to='/registerUser'>Cadastrar Usuário</NavLink>
-
+               
                     <div id="logged_user_options">
                       <span id="username">Usuário:<br/> {this.props.userName}</span>
                       <NavLink to="/reports" id="link_adm_users">Relatórios gerenciais</NavLink>
@@ -86,7 +86,7 @@ class Header extends React.Component{
   }
 }
 const mapStateToProps = state => {
-  return { userName: state.usersReducer.userName, userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
+  return { userName: state.usersReducer.userName, userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin, 
     loggedin: state.usersReducer.loggedin };
 };
 
