@@ -48,13 +48,14 @@ class RegisterProductForm extends React.Component{
 
     reader.addEventListener("load", () => {
       this.state.clientPicture = reader.result;
+      this.state.productPicture = "images/"+this.state.productPicture.substring(12, this.state.productPicture.length);
       this.registerProduct();
     }, false);
 
     if (file) {
       reader.readAsDataURL(file);
       message.innerHTML = "Carregando imagem...";
-      this.state.productPicture = "images/"+this.state.productPicture.substring(0, 13);
+      //this.state.productPicture = "images/"+this.state.productPicture.substring(13, this.state.productPicture.length);
     }else{
       this.state.productPicture = "images/usuario.png";
       this.registerProduct();
@@ -75,7 +76,7 @@ class RegisterProductForm extends React.Component{
     this.props.addNewProduct(newProduct);
 
     //changes page from form into success message
-    this.props.history.push("/");
+    this.props.history.push("/products");
 
   }
 
