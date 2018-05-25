@@ -54,8 +54,9 @@ class RegisterProductForm extends React.Component{
     if (file) {
       reader.readAsDataURL(file);
       message.innerHTML = "Carregando imagem...";
+      this.state.productPicture = "images/"+this.state.productPicture.substring(0, 13);
     }else{
-      this.state.clientPicture = "images/usuario.png";
+      this.state.productPicture = "images/usuario.png";
       this.registerProduct();
     }
 }
