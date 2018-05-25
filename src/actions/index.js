@@ -51,3 +51,17 @@ export const updateUser = (updatedUser) => {
 		updatedUser
 	}
 }
+
+export const updatePet = (updatedPet) => {
+	return {
+		type: "EDIT_PET",
+		updatedPet
+	}
+}
+
+export const deletePet = (petId) => {
+	return {
+		type: "DELETE_PET",
+		petId
+	}
+}

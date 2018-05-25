@@ -19,6 +19,16 @@
         "telephone": "(45)9124-3242",
         "isAdmin": false,
         "picture": "./images/usuario.png"
+    },
+    {
+        "id": 3,
+        "name": "Fulana",
+        "password": "pass123",
+        "address": "Rua Frufu, 12",
+        "email": "fulana@email.com",
+        "telephone": "(15)2324-5272",
+        "isAdmin": false,
+        "picture": "./images/usuario.png"
     }
 
 ]

@@ -19,20 +19,23 @@ class MyPets extends React.Component{
 
   render(){
     if(this.props.loggedin && !this.props.isAdmin){
-      //user is logged in and is an admin
-      //display form
+      //user is logged in and isnt an admin
+      //display pets
       return (
         <section className="content">
+        <h2>Meus pets</h2>
+        <button id="register_pet_button">Cadastrar novo pet</button>
+        <div className="clearfix"></div>
         {this.props.pets.map((pet, idx)=>{
           if(pet.ownerId==this.props.userId)
-            return (<Pet id={pet.id}/>);
+            return (<Pet id={pet.id} key={pet.id}/>);
         })}
         <div className="clearfix"></div>
         </section>
       );
     }
 
-    //if not logged in or not admin
+    //if not logged in or admin
     //display error
     return (
       <section className="content">

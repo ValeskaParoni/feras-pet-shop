@@ -499,8 +499,10 @@ button:hover {
   opacity: 0;
 }
 
-#delete_pet_button{
+.delete_pet_button{
 	float: right;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 .pet_services{
