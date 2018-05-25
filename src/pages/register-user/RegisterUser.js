@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 import Button from '../../controls/Button';
-import RegisterPetClient from '../../pet-client-form/RegisterPetClient'
+import RegisterClient from '../../pet-client-form/RegisterClient'
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage'
 
 
@@ -27,7 +27,7 @@ class RegisterUser extends React.Component{
       //display form
       return (
         <section className="content">
-          <RegisterPetClient formType="client"/>
+          <RegisterClient formType="client"/>
         </section>
       );
     }

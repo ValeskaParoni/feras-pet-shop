@@ -12,7 +12,7 @@ import {withRouter} from 'react-router-dom'
 props:
   this.props.formType - "pet" for registering a pet, "client" for registering a client
 */
-class RegisterPetClient extends React.Component{
+class RegisterClient extends React.Component{
   constructor (props, context){
     super(props, context);
 
@@ -204,4 +204,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(withRouter(RegisterPetClient));
+)(withRouter(RegisterClient));

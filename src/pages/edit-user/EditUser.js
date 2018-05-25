@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 import Button from '../../controls/Button';
-import EditPetClient from '../../pet-client-form/EditPetClient';
+import EditClient from '../../pet-client-form/EditClient';
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
 
@@ -27,7 +27,7 @@ class EditUser extends React.Component{
       //display form
       return (
         <section className="content">
-          <EditPetClient formType="client"/>
+          <EditClient formType="client"/>
         </section>
       );
     }
