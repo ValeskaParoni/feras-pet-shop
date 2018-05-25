@@ -1,2 +1,20 @@
 [
+	{
+		"id": 1,
+		"productName": "Osso",
+		"productDescription": "Brinquedo legal para cachorros de médio e grande porte. ",
+		"productType": "Brinquedo",
+		"productPrice": 9.90,
+		"productQuantity": 12,
+		"productPicture": "./images/bone.jpg"
+	},
+	{
+		"id": 2,
+		"productName": "Escova de pelos",
+		"productDescription": "Ótima para remover pelos mortos, evitar emaranhados e estimular o crescimento de novos pelos.",
+		"productType": "Higiene",
+		"productPrice": 12.90,
+		"productQuantity": 4,
+		"productPicture": "./images/brush.jpg"
+	}
 ]

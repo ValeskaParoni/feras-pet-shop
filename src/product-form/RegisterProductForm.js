@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { connect } from 'react-redux';
 import * as actions from '../actions'
+import {withRouter} from 'react-router-dom'
 /*
 On click functions still missing
 */
@@ -26,7 +27,6 @@ class RegisterProductForm extends React.Component{
   }
   handleChange(event) {
    const target = event.target;
-  //   console.log(target);
    const value = target.value;
    const name = target.name;
 
@@ -39,7 +39,6 @@ class RegisterProductForm extends React.Component{
     event.preventDefault();
     if(this.validate())
       this.previewFile();
-    console.log('sending')
   }
   previewFile = () => {
     var file    = document.querySelector('input[type=file]').files[0];
@@ -48,7 +47,7 @@ class RegisterProductForm extends React.Component{
 
 
     reader.addEventListener("load", () => {
-      this.state.productPicture = reader.result;
+      this.state.clientPicture = reader.result;
       this.registerProduct();
     }, false);
 
@@ -56,14 +55,13 @@ class RegisterProductForm extends React.Component{
       reader.readAsDataURL(file);
       message.innerHTML = "Carregando imagem...";
     }else{
-      this.state.productPicture = "";
+//      this.state.clientPicture = "images/usuario.png";
       this.registerProduct();
     }
-  }
+}
 
   registerProduct = () => {
     let id = this.props.registeredProducts.length+1;
-    console.log(id)
     let newProduct = {
         "id": id,
         "productName": this.state.productName,
@@ -76,7 +74,7 @@ class RegisterProductForm extends React.Component{
     this.props.addNewProduct(newProduct);
 
     //changes page from form into success message
-    //this.props.history.push("/productSuccess");
+    this.props.history.push("/");
 
   }
 
@@ -116,7 +114,8 @@ class RegisterProductForm extends React.Component{
           <span><b>Categoria:</b> <input type="text" name="productType" value={this.state.productType} onChange={this.handleChange}/></span><br/>
           <span><b>Preço:</b> <input type="number" min={0} step="any" name="productPrice" value={this.state.productPrice} onChange={this.handleChange}/></span><br/><br/>
           <span><b>Quantidade disponível</b> <input type="number" min={0} name="productQuantity" value={this.state.productQuantity} onChange={this.handleChange}/></span><br/>
-          <b>Foto: <input type="file" name="productPicture" accept="image/*" onChange={this.handleChange}/></b><br/>
+          <b>Foto: <input type="file" name="productPicture" accept="image/*" onChange={this.handleChange}/></b>
+          <span id="file_loading_message"></span><br/>
           <NavLink to="/" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
           <Button name="saveButton" onClick={this.handleSubmitProduct} text="Salvar"/>
         </form>
@@ -134,4 +133,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(RegisterProductForm);
+)(withRouter(RegisterProductForm));
