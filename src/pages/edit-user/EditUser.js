@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions';
 import Button from '../../controls/Button';
-import EditPetClient from '../../pet-client-form/EditPetClient'
-import InvalidAccessMessage from '../../controls/InvalidAccessMessage'
+import EditPetClient from '../../pet-client-form/EditPetClient';
+import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
 
 

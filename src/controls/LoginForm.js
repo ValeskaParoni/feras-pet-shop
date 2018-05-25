@@ -71,12 +71,12 @@ class LoginForm extends React.Component{
              <div id="username_form"> 
                 <label>Email:</label>
                  <input type="email" id ="login_email" name="username" value={this.state.username} onChange={this.handleChange} />
-                <br/>
+                
             </div>
             <div id="password_form"> 
                 <label>Senha: </label>
                 <input type="password" id="login_password" name="password" value={this.state.password} onChange={this.handleChange} />
-                <br/>
+                
             </div>
           <Button buttonClass="login_button" text="Login" id="login_button" onClick={this.handleSubmit}/>
         </form>

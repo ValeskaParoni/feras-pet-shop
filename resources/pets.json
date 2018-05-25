@@ -1,0 +1,28 @@
+
+[
+    {
+        "id": 1,
+        "ownerId": 2,
+        "name": "Morgana",
+        "birthdate": "2014-04-10",
+        "breed": "Golden Retriever",
+        "picture": "./images/goldenretriever.jpeg"
+    },
+    {
+        "id": 2,
+        "ownerId": 2,
+        "name": "Pascal",
+        "birthdate": "2016-02-24",
+        "breed": "Iguana verde",
+        "picture": "./images/iguana.jpg"
+    },
+    {
+        "id": 3,
+        "ownerId": 2,
+        "name": "Marta",
+        "birthdate": "2015-11-02",
+        "breed": "Gato siamês",
+        "picture": "./images/siamese-cat.jpeg"
+    }
+
+]

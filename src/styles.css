@@ -203,7 +203,7 @@ input[type=file]{
 			max-width: 80%;
 		}
 
-		#login label, #login_button {
+		#login_button {
 			padding: none;
 			margin: none;
 			float: none;
@@ -219,9 +219,6 @@ input[type=file]{
 			margin: 0 0 0 20;
 			float: none;
 			text-align: center;
-		}
-		#username_form, #password_form {
-			float: none;
 		}
 
 		input[type=password], #username_input{
@@ -324,8 +321,9 @@ input[type=file]{
 	right: 10px;
 }
 
-
-
+.button_with_margin{
+    margin-right: 5px;
+}
 
 .product {
 	border: 2px solid black;
@@ -466,13 +464,22 @@ button:hover {
 }
 
 @media screen and (max-width: 850px){
+
 	.pet_profile img{
 		float: none;
-		width: 80%;
+		width: 70%;
+        padding-left: 10px;
 	}
+
 	.profile_buttons {
 		position: static;
 	}
+    
+    .button_with_margin{
+        margin-bottom: 5px;
+        margin-top: 5px;
+        margin-right: 0px;
+    }
 	.pet_info {
 		padding-left: 10px;
 	}

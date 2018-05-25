@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from '../../actions'
+import * as actions from '../../actions';
 import Button from '../../controls/Button';
+import Pet from '../../pets/Pet';
+import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
-import productCatalog from '../../../resources/productCatalog.json'
-import productsCategories from '../../../resources/productsCategories.json'
-import servicesCatalog from '../../../resources/servicesCatalog.json'
-import servicesCategories from '../../../resources/servicesCategories.json'
 
 /* No props
   TODO: add onclick function to button!
@@ -18,30 +16,41 @@ class MyPets extends React.Component{
     super(props, context);
   }
 
-  componentDidMount(){
-    this.props.setProductCatalog(productCatalog)
-    this.props.setProductsCategories(productsCategories)
-    this.props.setServicesCatalog(servicesCatalog)
-    this.props.setServicesCategories(servicesCategories)
-  }
-  
-  render(){
 
+  render(){
+    if(this.props.loggedin && !this.props.isAdmin){
+      //user is logged in and is an admin
+      //display form
+      return (
+        <section className="content">
+        {this.props.pets.map((pet, idx)=>{
+          if(pet.ownerId==this.props.userId)
+            return (<Pet id={pet.id}/>);
+        })}
+        <div className="clearfix"></div>
+        </section>
+      );
+    }
+
+    //if not logged in or not admin
+    //display error
     return (
       <section className="content">
-      <p>Teste</p>
-      <div className="clearfix"></div>
-
-      
-    </section>
+        <InvalidAccessMessage/>
+      </section>
     );
+   
+
+
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    productsReducer: state.productsReducer,
-    servicesReducer: state.servicesReducer,
+    userId: state.usersReducer.userId,
+    loggedin: state.usersReducer.loggedin,
+    pets: state.petsReducer.pets,
+    isAdmin: state.usersReducer.isAdmin
   }
 }
 
