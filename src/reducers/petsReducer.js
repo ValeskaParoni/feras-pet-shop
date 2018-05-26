@@ -10,6 +10,18 @@ const petsReducer = (state = initialState, action) => {
 
     switch(action.type) {
 
+        case 'ADD_PET':
+             return (
+                        {
+                            ...state,
+                            "pets": [
+                                ...state.pets,
+                                action.newPet
+                            ]
+                        }
+
+                    );
+
 
         case 'EDIT_PET':
                return { 

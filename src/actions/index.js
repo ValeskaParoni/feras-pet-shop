@@ -65,3 +65,10 @@ export const deletePet = (petId) => {
 		petId
 	}
 }
+
+export const addPet = (newPet) => {
+	return {
+		type: "ADD_PET",
+		newPet
+	}
+}

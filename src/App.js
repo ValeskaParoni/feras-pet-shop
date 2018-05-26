@@ -11,6 +11,7 @@ import RegisterProductForm from './product-form/RegisterProductForm'
 import UserCreated from './pages/register-user/UserCreated';
 import EditUser from './pages/edit-user/EditUser';
 import DataUpdated from './pages/edit-user/DataUpdated';
+import RegisterPet from './pages/register-pet/RegisterPet';
 import styles from './styles.css';
 import {
   Route,
@@ -39,6 +40,7 @@ class App extends React.Component {
           <Route path="/userSuccess" component={UserCreated}/>
           <Route path="/editUser" component={EditUser}/>
           <Route path="/dataUpdated" component={DataUpdated}/>
+          <Route path="/registerPet" component={RegisterPet}/>
           <Footer />
         </div>
       </HashRouter>

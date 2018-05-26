@@ -8,10 +8,7 @@ import {
 } from "react-router-dom";
 import {withRouter} from 'react-router-dom'
 
-/*
-props:
-  this.props.formType - "pet" for registering a pet, "client" for registering a client
-*/
+
 class RegisterClient extends React.Component{
   constructor (props, context){
     super(props, context);
@@ -142,27 +139,6 @@ class RegisterClient extends React.Component{
   }
 
   render(){
-    if(this.props.formType=="pet"){
-       return(
-              <div>
-              <h2>Cadastrar novo pet</h2>
-              <form>
-                  <b>Nome:</b> <Input type="text" name="petname"/><br/>
-                  <b>Data de nascimento:</b>
-                        <Input type="date" name="dateofbirth" id="dateofbirth"/><br/>
-                  <b>Raça:</b> <Input type="text" name="breed" list="breeds"/> <br/>
-                      <datalist id="breeds">
-                      </datalist>
-                  <b>Foto: <Input type="file" name="pet_picture"/></b><br/>
-                  <br/>
-                  <div id="new_pet_buttons">
-                    <Button text="Cancelar" onClick=""/>
-                    <Button text="Confirmar" onClick=""/>
-                  </div>
-              </form>
-              </div>
-        );
-    }else{
 
        return(
             <div>
@@ -188,8 +164,6 @@ class RegisterClient extends React.Component{
               </div>
             </div>
         );
-
-    }
 
   }
 }

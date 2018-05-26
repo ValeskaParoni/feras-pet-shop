@@ -5,6 +5,9 @@ import * as actions from '../../actions';
 import Button from '../../controls/Button';
 import Pet from '../../pets/Pet';
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
+import {
+  NavLink
+} from "react-router-dom";
 
 
 /* No props
@@ -24,7 +27,7 @@ class MyPets extends React.Component{
       return (
         <section className="content">
         <h2>Meus pets</h2>
-        <button id="register_pet_button">Cadastrar novo pet</button>
+        <NavLink to="/registerPet" id='home_link'><button id="register_pet_button">Cadastrar novo pet</button></NavLink>
         <div className="clearfix"></div>
         {this.props.pets.map((pet, idx)=>{
           if(pet.ownerId==this.props.userId)
