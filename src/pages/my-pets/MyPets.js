@@ -10,7 +10,9 @@ import {
 } from "react-router-dom";
 
 
-/* No props
+/*Main page for pets.
+  Not accessible by unlogged users or admins. 
+  No props
   TODO: add onclick function to button!
 */
 

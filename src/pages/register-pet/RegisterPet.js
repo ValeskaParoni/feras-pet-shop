@@ -10,8 +10,8 @@ import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 import {withRouter} from 'react-router-dom'
 
 /*
-props:
-  this.props.formType - "pet" for registering a pet, "client" for registering a client
+Page for registering a pet
+Not accessible by unlogged users or admins
 */
 class RegisterPet extends React.Component{
   constructor (props, context){

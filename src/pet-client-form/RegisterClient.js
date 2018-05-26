@@ -9,6 +9,7 @@ import {
 import {withRouter} from 'react-router-dom'
 
 
+/*Form to add a new client. */
 class RegisterClient extends React.Component{
   constructor (props, context){
     super(props, context);
