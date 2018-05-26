@@ -153,7 +153,7 @@ class RegisterPet extends React.Component{
                         <span id="file_loading_message"></span><br/>
                         <br/>
                         <div id="new_pet_buttons">
-                          <NavLink to="/mypets" id='home_link'><Button text="Cancelar"/></NavLink>
+                          <NavLink to="/mypets" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
                           <Button text="Confirmar" onClick={this.handleSubmitPet}/>
                         </div>
                     </form>
