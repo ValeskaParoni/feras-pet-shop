@@ -72,3 +72,9 @@ export const addPet = (newPet) => {
 		newPet
 	}
 }
+export const addNewProduct = (newProduct) =>{
+	return {
+		type: "REGISTER_PRODUCT",
+		newProduct
+	}
+}
