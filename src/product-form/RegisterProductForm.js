@@ -47,20 +47,18 @@ class RegisterProductForm extends React.Component{
 
 
     reader.addEventListener("load", () => {
-      this.state.clientPicture = reader.result;
-      this.state.productPicture = "images/"+this.state.productPicture.substring(12, this.state.productPicture.length);
+      this.state.productPicture = reader.result;
       this.registerProduct();
     }, false);
 
     if (file) {
       reader.readAsDataURL(file);
       message.innerHTML = "Carregando imagem...";
-      //this.state.productPicture = "images/"+this.state.productPicture.substring(13, this.state.productPicture.length);
     }else{
       this.state.productPicture = "images/usuario.png";
       this.registerProduct();
     }
-}
+  }
 
   registerProduct = () => {
     let id = this.props.registeredProducts.length+1;
@@ -110,15 +108,15 @@ class RegisterProductForm extends React.Component{
     return (
       <div>
         <form>
-          <b><h2>Cadastrar produto/serviço</h2></b>
+          <b><h2>Cadastrar produto</h2></b>
           <span><b>Nome:</b> <input type="text" name="productName" value={this.state.productName} onChange={this.handleChange}/> </span><br/>
-          <span><b>Descrição:</b> <textarea name="productDescription" rows = "10" cols="40" onChange={this.handleChange} value={this.state.product_description}/></span><br/>
+          <span><b>Descrição:</b> <textarea name="productDescription" rows = "10" cols="40" onChange={this.handleChange} value={this.state.productDescription}/></span><br/>
           <span><b>Categoria:</b> <input type="text" name="productType" value={this.state.productType} onChange={this.handleChange}/></span><br/>
           <span><b>Preço:</b> <input type="number" min={0} step="any" name="productPrice" value={this.state.productPrice} onChange={this.handleChange}/></span><br/><br/>
           <span><b>Quantidade disponível</b> <input type="number" min={0} name="productQuantity" value={this.state.productQuantity} onChange={this.handleChange}/></span><br/>
           <b>Foto: <input type="file" name="productPicture" accept="image/*" onChange={this.handleChange}/></b>
           <span id="file_loading_message"></span><br/>
-          <NavLink to="/" id='home_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
+          <NavLink to="/products" id='products_link'><Button buttonClass="cancel_button" text="Cancelar"/></NavLink>
           <Button name="saveButton" onClick={this.handleSubmitProduct} text="Salvar"/>
         </form>
       </div>

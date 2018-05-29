@@ -8,7 +8,11 @@ class RegisterProducts extends React.Component{
   }
 
   render(){
-    return(<RegisterProductForm/>);
+    return(
+      <section className="content">
+        <RegisterProductForm/>
+      </section>
+    );
   }
 
 }

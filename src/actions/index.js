@@ -78,3 +78,10 @@ export const addNewProduct = (newProduct) =>{
 		newProduct
 	}
 }
+
+export const updateProduct = (updatedProduct) => {
+	return {
+		type: "EDIT_PRODUCT",
+		updatedProduct
+	}
+}
