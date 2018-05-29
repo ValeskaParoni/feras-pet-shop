@@ -16,21 +16,28 @@ const productsReducer = (state = initialState, action) => {
 								]
 						}
 				);
-				case 'EDIT_PRODUCT':
-							 return {
-										...state,
-										products: state.registeredProducts.map(
-											 (currentProduct, i) => {
-														if(currentProduct.id === action.updatedProduct.id){
-																return {...currentProduct, ...action.updatedProduct};
-														}
-														else {
-																return currentProduct;
-														}
-
+		case 'EDIT_PRODUCT':
+					 return {
+								...state,
+								products: state.registeredProducts.map(
+									 (currentProduct, i) => {
+												if(currentProduct.id === action.updatedProduct.id){
+														return {...currentProduct, ...action.updatedProduct};
 												}
-									 )
-								}
+												else {
+														return currentProduct;
+												}
+
+										}
+							 )
+						}
+		case 'DELETE_PRODUCT':
+            return{
+                ...state,
+                products: state.registeredProducts.filter((product, i) => product.id !== action.productId)
+
+            }
+
 		default:
 			return state;
 	}

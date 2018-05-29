@@ -85,3 +85,10 @@ export const updateProduct = (updatedProduct) => {
 		updatedProduct
 	}
 }
+
+export const deleteProduct = (productId) => {
+	return {
+		type: "DELETE_PRODUCT",
+		productId
+	}
+}

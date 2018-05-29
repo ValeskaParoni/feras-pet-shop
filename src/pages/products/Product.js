@@ -94,6 +94,21 @@ class Product extends React.Component{
     }
 
   }
+  deleteProduct = () => {
+
+    //confirms deletion
+    if(confirm("Tem certeza que deseja excluir o produto "+this.state.product.productName+"?")){
+      //delete pet and hide component
+      this.props.deleteProduct(this.state.product.id);
+      this.setState(
+                  {
+                    deleted: true
+                  }
+      );
+
+    }
+
+  }
   previewFile = () => {
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
@@ -130,7 +145,11 @@ class Product extends React.Component{
 
   }
   render(){
+    if(this.state.deleted){
+      return null;
+    }
     let isAd = this.props.isAdmin;
+
     const button = isAd ? (
       <Button buttonClass="button_with_margin" text="Editar produto" onClick={this.editProduct}/>
     ) :
@@ -165,6 +184,7 @@ class Product extends React.Component{
           <div className="product_left">
             <img src={this.state.productCopy.productPicture} alt={this.state.productCopy.productName}/>
             {button}
+            <Button text="Excluir" buttonClass="delete_product_button" onClick={this.deleteProduct}/>
           </div>
 
           <div className="product_right">
