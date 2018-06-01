@@ -332,6 +332,13 @@ input[type=file]{
 	padding: 10px;
 	margin-bottom: 10px;
 }
+
+.delete_product_button {
+    margin-top: 5px;
+}
+
+
+
 .product img {
 	width: 80%;
 }
@@ -461,6 +468,10 @@ button:hover {
 	float: right;
 	margin-right: 20%;
 	margin-bottom: 10px;
+}
+
+.register_product_button{
+    margin-bottom: 5px;
 }
 
 @media screen and (max-width: 850px){

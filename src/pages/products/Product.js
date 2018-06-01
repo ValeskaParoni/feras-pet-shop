@@ -183,7 +183,6 @@ class Product extends React.Component{
         <div className="product">
           <div className="product_left">
             <img src={this.state.productCopy.productPicture} alt={this.state.productCopy.productName}/>
-            {button}
             <Button text="Excluir" buttonClass="delete_product_button" onClick={this.deleteProduct}/>
           </div>
 
@@ -196,8 +195,8 @@ class Product extends React.Component{
           <span><b>Quantidade disponível</b> <input type="number" min={0} name="productQuantity" value={this.state.productCopy.productQuantity} onChange={this.handleChange}/></span><br/>
           <b>Foto: <input type="file" name="productPicture" accept="image/*" onChange={this.handleChange}/></b>
           <span id="file_loading_message"></span><br/>
-          <Button buttonClass="button_with_margin" text="Cancelar" onClick={this.cancelEdit}/>
-          <Button name="saveButton" onClick={this.handleSubmitProduct} text="Salvar"/>
+          <Button buttonClass="delete_pet_button" text="Cancelar" onClick={this.cancelEdit}/>
+          <Button buttonClass="delete_pet_button" name="saveButton" onClick={this.handleSubmitProduct} text="Salvar"/>
           </div>
         </div>
       )
