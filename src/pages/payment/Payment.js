@@ -38,10 +38,20 @@ class Cart extends React.Component{
 
   constructor (props, context){
     super(props, context);
+
+    this.state = {
+      name: '',
+      cardNumber: '',
+      date: '',
+      cvv: '',
+    }
+  }
+
+  handleChange = (event) => {
+    this.setState({[event.target.name] : event.target.value})
   }
 
   render(){
-
     if (!this.props.loggedin || this.props.isAdmin){
       return (
         <section className="content">
@@ -56,20 +66,19 @@ class Cart extends React.Component{
 
     return (
       <section className="content">
-        <h2>Carrinho de compras</h2>
+        <h2>Finalizar compra</h2>
         <br/>
-        {this.props.cartReducer.cart.map((product, idx) => (
-          <CartProduct 
-            {...product}
-            increaseQuantity={() => this.props.addToCart(product)}
-            decreaseQuantity={() => this.props.decreaseCartQuantity(product)}
-            key={idx}
-          />
-        ))}
-        
+
+        <div>
+          <h3>Cartão de crédito</h3>
+          <span>Nome: <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/> </span><br/>
+          <span>Número cartão: <input type="number" name="cardNumber" value={this.state.cardNumber} onChange={this.handleChange}/></span><br/>
+          <span>Data de validade: <input type="text" name="date" value={this.state.date} onChange={this.handleChange}/></span>
+          <span>CVV: <input type="number" name="cvv" value={this.state.cvv} onChange={this.handleChange}/></span><br/>
+        </div>
+
         <span id='cart_total_value'><b>Total: </b>R${total.toFixed(2)}</span>
-        
-        <NavLink to="/payment" id='home_link'><Button buttonClass="button_with_margin" text="Finalizar"/> </NavLink>
+        <Button buttonClass="button_with_margin" text="Realizar pagamento" onClick={() => {}}/> 
 
         <div className="clearfix"></div>
       </section>

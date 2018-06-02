@@ -15,6 +15,7 @@ import RegisterPet from './pages/register-pet/RegisterPet';
 import Products from './pages/products/Products';
 import RegisterProducts from './pages/register-products/RegisterProducts';
 import Cart from './pages/cart/Cart';
+import Payment from './pages/payment/Payment';
 import styles from './styles.css';
 import {
   Route,
@@ -47,6 +48,7 @@ class App extends React.Component {
           <Route path="/products" component={Products}/>
           <Route path="/registerProducts" component={RegisterProducts}/>
           <Route path="/cart" component={Cart}/>
+          <Route path="/payment" component={Payment}/>
           <Footer />
         </div>
       </HashRouter>
