@@ -14,6 +14,7 @@ import DataUpdated from './pages/edit-user/DataUpdated';
 import RegisterPet from './pages/register-pet/RegisterPet';
 import Products from './pages/products/Products';
 import RegisterProducts from './pages/register-products/RegisterProducts';
+import Cart from './pages/cart/Cart';
 import styles from './styles.css';
 import {
   Route,
@@ -45,6 +46,7 @@ class App extends React.Component {
           <Route path="/registerPet" component={RegisterPet}/>
           <Route path="/products" component={Products}/>
           <Route path="/registerProducts" component={RegisterProducts}/>
+          <Route path="/cart" component={Cart}/>
           <Footer />
         </div>
       </HashRouter>

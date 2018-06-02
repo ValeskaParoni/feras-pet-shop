@@ -474,6 +474,10 @@ button:hover {
     margin-bottom: 5px;
 }
 
+#cart_total_value {
+	margin-right: 20px;
+}
+
 @media screen and (max-width: 850px){
 
 	.pet_profile img{

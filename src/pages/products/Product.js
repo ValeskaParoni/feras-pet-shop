@@ -31,8 +31,10 @@ class Product extends React.Component{
 
   }
 
-  addToCart = () =>{
+  addToCart = (product) =>{
     console.log('add product to cart')
+    this.props.addToCart(product)
+
   }
   cancelEdit = () =>{
 
@@ -154,14 +156,14 @@ class Product extends React.Component{
       <Button buttonClass="button_with_margin" text="Editar produto" onClick={this.editProduct}/>
     ) :
     (
-      <Button buttonClass="button_with_margin" text="Adicionar ao carrinho" onClick={this.addToCart}/>
+      <Button buttonClass="button_with_margin" text="Adicionar ao carrinho" onClick={() => this.addToCart(this.state.productCopy)}/>
     )
     if (!this.state.productEditOn) {
       return (
         <div className="product">
   				<div className="product_left">
   					<img src={this.state.product.productPicture} alt={this.state.product.productName}/>
-            {button}
+            <NavLink to="/cart" id='home_link'>{button}</NavLink>
   				</div>
 
   				<div className="product_right">

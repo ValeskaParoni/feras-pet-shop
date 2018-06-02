@@ -64,7 +64,7 @@ class Header extends React.Component{
                     <NavLink to='/mypets'>Meus Pets</NavLink>
                     <div id="logged_user_options">
                       <span id="username">Usuário:<br/>{this.props.userName}</span>
-                      <NavLink to="/shoppingCart" id="link_change_user">Carrinho de compras</NavLink>
+                      <NavLink to="/cart" id="link_change_user">Carrinho de compras</NavLink>
                       <NavLink to="/editUser">Alterar cadastro</NavLink>
                       <NavLink to="/" onClick={this.logoff}>Sair</NavLink>
                     </div>
