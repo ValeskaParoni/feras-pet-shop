@@ -1,0 +1,35 @@
+﻿Trabalho 2: Funcionalidade do Cliente da Aplicação Pet Shop
+Introdução ao Desenvolvimento Web – 1º sem. 2018
+Grupo:
+	Chan Ken Chen - 9436170
+	Cristiano Chiaramelli - 9293053
+	Elisa Saltori Trujillo - 8551100
+	Valeska Paroni Silva - 
+
+Roteiro de testes:
+
+	-Funções do administrador:
+		
+		1) Login inválido	
+		2) Login válido
+		3) Produtos
+			3.a) Criar produto
+			3.b) Editar produto
+				-cancelar
+				-confirmar
+			3.c) Excluir produto
+		4) Serviços
+		5) Criar usuário
+		6) Relatórios gerenciais
+		7) Alterar cadastro
+
+	-Funções do cliente:
+		
+		1) Login com cliente recentemente criado
+		2) Sair e logar com cliente já criado
+		3) Comprar produto
+		4) Marcar serviço
+		5) Consultar pets
+			5.a) Registrar pet
+			5.b) Editar pet
+			5.c) Excluir pet
