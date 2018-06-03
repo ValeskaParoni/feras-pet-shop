@@ -23,13 +23,13 @@
 | J. Calendar Hour |Valeska|Doing| |
 |K. Calendar |Valeska| To Do | J |
 |L. Product | | To Do | A |
-|M. Cart | | To Do | L, A |
+|M. Cart | Cristiano | Done | L, A |
 |N. Edit Product or Service | | To Do | E, A |
 |O. See Upcoming Services | | To Do | A |
 |P. Home Page| Elisa | Done | J, A |
 |Q. Pet| Elisa | Done | A|
 |R. My Pets | Elisa | Done | Q, A |
-|S. Checkout| | To Do |A |
+|S. Checkout| Cristiano | Done |A |
 |T. Service | | To Do | A|
 |U. Products or Services Pages | | To Do | L, T, A |
 |V. History| | To Do | A|
