@@ -78,7 +78,7 @@ class Cart extends React.Component{
         </div>
 
         <span id='cart_total_value'><b>Total: </b>R${total.toFixed(2)}</span>
-        <Button buttonClass="button_with_margin" text="Realizar pagamento" onClick={() => {}}/> 
+        <NavLink to="/" id='home_link'><Button buttonClass="button_with_margin" text="Realizar pagamento" onClick={() => {}}/> </NavLink>
 
         <div className="clearfix"></div>
       </section>
