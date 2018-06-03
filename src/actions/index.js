@@ -105,3 +105,17 @@ export const decreaseCartQuantity = (product) => {
 		product
 	}
 }
+export const decreaseCatalogQuantity = (product) => {
+	return {
+		type: 'DECREASE_CATALOG_QUANTITY',
+		product
+	}
+}
+export const increaseCatalogQuantity = (product) => {
+	return {
+		type: 'INCREASE_CATALOG_QUANTITY',
+		product
+	}
+}
+
+

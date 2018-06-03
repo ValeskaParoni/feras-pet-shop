@@ -33,6 +33,7 @@ class Product extends React.Component{
 
   addToCart = (product) =>{
     console.log('add product to cart')
+    this.props.decreaseCatalogQuantity(product)
     this.props.addToCart(product)
 
   }

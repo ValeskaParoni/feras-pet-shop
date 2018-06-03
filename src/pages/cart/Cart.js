@@ -9,7 +9,7 @@ import {
 //import styles from '../styles.css';
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
-const CartProduct = ({productName, productDescription, productType, productPrice, count, productPicture, increaseQuantity, decreaseQuantity}) => {
+const CartProduct = ({productName, productDescription, productType, productPrice, count, productPicture, increaseQuantity, decreaseQuantity, productQuantity}) => {
 
   return (
     <div className="product">
@@ -26,7 +26,7 @@ const CartProduct = ({productName, productDescription, productType, productPrice
           <div>
             <Button buttonClass="button_with_margin" text="-" onClick={decreaseQuantity}/>
             <span> {count} </span>
-            <Button buttonClass="button_with_margin" text="+" onClick={increaseQuantity}/>
+            <Button buttonClass="button_with_margin" text="+" onClick={increaseQuantity} disabled={productQuantity<=0}/>
           </div>
         </span>
       </div>
@@ -61,8 +61,15 @@ class Cart extends React.Component{
         {this.props.cartReducer.cart.map((product, idx) => (
           <CartProduct 
             {...product}
-            increaseQuantity={() => this.props.addToCart(product)}
-            decreaseQuantity={() => this.props.decreaseCartQuantity(product)}
+            increaseQuantity={() => {
+              this.props.decreaseCatalogQuantity(product)
+              this.props.addToCart(product)
+            }}
+            decreaseQuantity={() => {
+              this.props.increaseCatalogQuantity(product)
+              this.props.decreaseCartQuantity(product)
+            }}
+            productQuantity={this.props.registeredProducts.find(p=>p.id==product.id).productQuantity}
             key={idx}
           />
         ))}
@@ -81,7 +88,8 @@ const mapStateToProps = state => {
   return {
     cartReducer: state.cartReducer,
     loggedin: state.usersReducer.loggedin,
-    isAdmin: state.usersReducer.isAdmin
+    isAdmin: state.usersReducer.isAdmin,
+    registeredProducts: state.productsReducer.registeredProducts
   }
 }
 

@@ -24,7 +24,7 @@ class Products extends React.Component{
           <h2>Produtos</h2>
           {but}
           <br/>
-          {this.props.registeredProducts.map((product)=>{
+          {this.props.registeredProducts.filter(product => product.productQuantity>0).map((product)=>{
               return (<Product id={product.id} key={product.id}/>);
           })}
           <div className="clearfix"></div>
