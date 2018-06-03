@@ -73,10 +73,15 @@ class Cart extends React.Component{
             key={idx}
           />
         ))}
-        
-        <span id='cart_total_value'><b>Total: </b>R${total.toFixed(2)}</span>
-        
-        <NavLink to="/payment" id='home_link'><Button buttonClass="button_with_margin" text="Finalizar"/> </NavLink>
+        {this.props.cartReducer.cart.length>0
+        ?
+        <div>
+          <span id='cart_total_value'><b>Total: </b>R${total.toFixed(2)}</span>
+          <NavLink to="/payment" id='home_link'><Button buttonClass="button_with_margin" text="Finalizar"/> </NavLink>
+        </div>
+        :
+        <span>Seu carrinho está vazio!</span>
+        }
 
         <div className="clearfix"></div>
       </section>
