@@ -9,9 +9,10 @@ Grupo:
 Framework utilizado:
 	React
 
-Biblioteca utilizada:
-	Redux
-	Router
+Bibliotecas utilizadas:
+	Router (para transformação da aplicação em uma Single Page Application)
+	Redux (para gerenciamento de dados e estados)
+	
 
 Para logar no sistema:
 	-Dois usuários são inicialmente providenciados, um administrador e um cliente.
