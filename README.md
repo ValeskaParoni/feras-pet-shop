@@ -30,6 +30,6 @@
 |Q. Pet| Elisa | Done | A|
 |R. My Pets | Elisa | Done | Q, A |
 |S. Checkout| | To Do |A |
-|T. Service | | To Do | A|
+|T. Service | Valeska | To Do | A|
 |U. Products or Services Pages | Valeska | To Do | L, T, A |
 |V. History| | To Do | A|
