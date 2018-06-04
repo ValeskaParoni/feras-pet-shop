@@ -74,6 +74,8 @@ de erro quando o usuario acessa uma página indevida
 
 		-./pages: diretório que contém os compontenes que formam cada "página"
 da aplicação
+			-./cart: diretório da página do carrinho de compras
+				-Cart.js: componente do carrinho de compras
 			-./edit-user: diretório página de editar o cadastro de um usuário
 				-EditUser.js: componente da página de editar cadastro
 				-DataUpdated.js: mensagem de sucesso ao editar usuário
@@ -82,6 +84,9 @@ da aplicação
 			-./my-pets: diretório que contém a página "Meus Pets"
 				-MyPets.js: componente da página "Meus Pets" (exibe os
 pets cadastrados de um usuário)
+			-./payment: diretório que contém a página de pagamento
+				-Payment.js: componente da página de pagamento (com formulário)
+				-PaymentSuccess.js: mensagem de sucesso ao realizar pagamento
 			-./products: diretório que contém a página de produtos
 				-Product.js: componente de exibição de um único produto
 				-Products.js: componente da página de produtos, exibe
@@ -108,6 +113,7 @@ usuário
 
 		-./reducers: diretório que contém os reducers utilizados pela aplicação (REDUX)
 			-index.js: arquivo que unifica reducers
+			-cartReducer.js: reducers relativos ao carrinho de compras
 			-petsReducer.js: reducers relativos a pets
 			-productsReducer.js: reducers relativos a produtos
 			-servicesReducer.js: reducers relativos a serviços

@@ -75,7 +75,18 @@ criado com sucesso.
 		Logue em uma conta de cliente. A aplicação vem com o usuário 
 "cliente@email.com"/"pass123" pré-cadastrado.
 		
-		1) Comprar produto TODO
+		1) Comprar produto
+			-Logado como cliente, clique em "Produtos" no header.
+			-Clique no botão "adicionar ao carrinho"
+			-O carrinho deve aparecer com o objeto selecionado.
+			-Incremente e decremente a quantidade
+			-Retorne a página "Produtos". A quantidade do objeto adicionado
+deve ter sido alterada
+			-Clique em "Carrinho de compras"
+			-Clique em "Finalizar"
+			-Preencha em formulário e clique em "Realizar pagamento"
+			-Uma mensagem de sucesso deve aparecer na tela
+
 		2) Marcar serviço TODO
 
 		3) Consultar pets
