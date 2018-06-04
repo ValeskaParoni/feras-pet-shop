@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "petID": 1,
+        "petName": "Morgana",
+        "serviceName": "Banho",
+        "serviceID": 1,
+        "servicePrice": 40.00,
+        "servicePicture": "./images/banho.jpg"
+    },
+    {
+        "id": 2,
+        "petID": 1,
+        "petName": "Morgana",
+        "serviceID": "2",
+        "serviceName": "Vacina",
+        "servicePrice": 70.00,
+        "servicePicture": "./images/vacina.jpg"
+    }
+]

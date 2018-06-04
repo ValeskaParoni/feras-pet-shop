@@ -145,3 +145,23 @@ export const deleteService = (serviceId) => {
 	}
 }
 
+export const scheduleService = (schduledService){
+	return{
+		type: "SCHEDULE_SERVICE",
+		scheduledService
+	}
+}
+
+export const scheduleService = (scheduleId){
+	return{
+		type: "REMOVE_SCHEDULED_SERVICE",
+		scheduleId
+	}
+}
+
+export const updateSchedule = (updatedSchedule){
+	return(
+		type: "EDIT_SCHEDULE",
+		updatedSchedule
+	)
+}
