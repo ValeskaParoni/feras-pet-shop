@@ -32,4 +32,4 @@
 |S. Checkout| Cristiano | Done |A |
 |T. Service | Valeska | To Do | A|
 |U. Products or Services Pages | Valeska | To Do | L, T, A |
-|V. History| | To Do | A|
+|V. History| Cristiano | To Do | A|
