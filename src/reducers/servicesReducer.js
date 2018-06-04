@@ -1,4 +1,10 @@
-const servicesReducer = (state = {}, action) => {
+import registeredServices from '../../resources/servicesCatalog.json'
+
+const initialState = {
+	"registeredServices" : registeredServices
+}
+
+const servicesReducer = (state = initialState, action) => {
 
 	switch(action.type) {
 		case 'SET_SERVICES_CATALOG':
@@ -11,6 +17,40 @@ const servicesReducer = (state = {}, action) => {
 				...state,
 				servicesCategories: action.servicesCategories,
 			};
+
+		case 'REGISTER_SERVICE':
+			return (
+							{
+									...state,
+									"registeredServices": [
+											...state.registeredServices,
+											action.newService
+									]
+							}
+					);
+
+			
+		case 'EDIT_SERVICE':
+					 return {
+								...state,
+								products: state.registeredServices.map(
+									 (currentService, i) => {
+												if(currentService.id === action.updatedService.id){
+														return {...currentService, ...action.updatedService};
+												}
+												else {
+														return currentService;
+												}
+
+										}
+							 )
+						}
+		case 'DELETE_SERVICE':
+            return{
+                ...state,
+                products: state.registeredServices.filter((product, i) => product.id !== action.productId)
+
+            }
 		default:
 			return state;
 	}

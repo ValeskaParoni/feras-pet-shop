@@ -33,6 +33,8 @@ class Product extends React.Component{
     console.log('add product to cart')
     this.props.decreaseCatalogQuantity(product)
     this.props.addToCart(product)
+        this.props.history.push("/cart");
+
 
   }
 
@@ -168,7 +170,6 @@ class Product extends React.Component{
       return null;
     }
     let isAd = this.props.isAdmin;
-
     const button = isAd ? (
       <Button buttonClass="button_with_margin" text="Editar produto" onClick={this.editProduct}/>
     ) :
@@ -180,7 +181,7 @@ class Product extends React.Component{
         <div className="product">
   				<div className="product_left">
   					<img src={this.state.product.productPicture} alt={this.state.product.productName}/>
-            <NavLink to="/cart" id='home_link'>{button}</NavLink>
+            {button}
   				</div>
 
   				<div className="product_right">

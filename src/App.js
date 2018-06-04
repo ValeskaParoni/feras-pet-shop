@@ -14,6 +14,8 @@ import DataUpdated from './pages/edit-user/DataUpdated';
 import RegisterPet from './pages/register-pet/RegisterPet';
 import Products from './pages/products/Products';
 import RegisterProducts from './pages/register-products/RegisterProducts';
+import Services from './pages/services/Services';
+import RegisterServices from './pages/register-service/RegisterServices';
 import Cart from './pages/cart/Cart';
 import Payment from './pages/payment/Payment';
 import PaymentSuccess from './pages/payment/PaymentSuccess';
@@ -51,6 +53,8 @@ class App extends React.Component {
           <Route path="/cart" component={Cart}/>
           <Route path="/payment" component={Payment}/>
           <Route path="/paymentSuccess" component={PaymentSuccess}/>
+          <Route path="/services" component={Services}/>
+          <Route path="/registerServices" component={RegisterServices}/>
           <Footer />
         </div>
       </HashRouter>

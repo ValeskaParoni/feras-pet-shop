@@ -124,3 +124,24 @@ export const emptyCart = () =>{
 	}
 }
 
+export const addNewService = (newService) =>{
+	return {
+		type: "REGISTER_SERVICE",
+		newService
+	}
+}
+
+export const updateService = (updatedService) => {
+	return {
+		type: "EDIT_SERVICE",
+		updatedService
+	}
+}
+
+export const deleteService = (serviceId) => {
+	return {
+		type: "DELETE_SERVICE",
+		serviceId
+	}
+}
+

@@ -7,7 +7,7 @@ import {
   NavLink
 } from "react-router-dom";
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
 /*
 Page for registering a pet
@@ -179,6 +179,7 @@ const mapStateToProps = state => {
   return { 
           userId: state.usersReducer.userId, 
           loggedin: state.usersReducer.loggedin,
+          isAdmin: state.usersReducer.isAdmin,
           pets: state.petsReducer.pets
    };
 };
