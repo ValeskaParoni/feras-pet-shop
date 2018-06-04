@@ -30,7 +30,6 @@ class Product extends React.Component{
 
   //adds a product to cart
   addToCart = (product) =>{
-    console.log('add product to cart')
     this.props.decreaseCatalogQuantity(product)
     this.props.addToCart(product)
         this.props.history.push("/cart");
@@ -44,12 +43,12 @@ class Product extends React.Component{
 
     let productCopy = {...this.state.productCopy}
 
-    this.state.productCopy.productName = this.state.product.productName;
-    this.state.productCopy.productDescription = this.state.product.productDescription;
-    this.state.productCopy.productType = this.state.product.productType;
-    this.state.productCopy.productPrice = this.state.product.productPrice;
-    this.state.productCopy.productQuantity = this.state.product.productQuantity;
-    this.state.productCopy.productPicture = this.state.product.productPicture;
+    productCopy.productName = this.state.product.productName;
+    productCopy.productDescription = this.state.product.productDescription;
+    productCopy.productType = this.state.product.productType;
+    productCopy.productPrice = this.state.product.productPrice;
+    productCopy.productQuantity = this.state.product.productQuantity;
+    productCopy.productPicture = this.state.product.productPicture;
 
     this.setState(
                   {
@@ -174,7 +173,7 @@ class Product extends React.Component{
       <Button buttonClass="button_with_margin" text="Editar produto" onClick={this.editProduct}/>
     ) :
     (
-      <Button buttonClass="button_with_margin" text="Adicionar ao carrinho" onClick={() => this.addToCart(this.state.productCopy)}/>
+       <NavLink to='/cart'><Button buttonClass="button_with_margin" text="Adicionar ao carrinho" onClick={() => this.addToCart(this.state.productCopy)}/></NavLink>
     )
     if (!this.state.productEditOn) {
       return (
