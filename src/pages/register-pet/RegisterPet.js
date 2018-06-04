@@ -117,7 +117,7 @@ class RegisterPet extends React.Component{
       error = true;
 
     let petBirthdate = new Date(this.state.birthdate);
-    if(!petBirthdate){
+    if(petBirthdate == "Invalid Date"){
       error = true;
     }
 

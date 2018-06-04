@@ -139,7 +139,7 @@ p {
 	float: left;
 }
 
-input[type=text], input[type=tel], input[type=email], input[type=checkbox], input[type=password], textarea{
+input[type=text], input[type=tel], input[type=email], input[type=checkbox], input[type=password], input[type=month], input[type=number], textarea{
 	padding: 2px;
 	margin-left: 10px;
     margin-top: 5px;

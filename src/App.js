@@ -3,11 +3,11 @@ import Button from './controls/Button';
 import Image from './controls/Image';
 import Link from './controls/Link';
 import Header from './controls/Header';
-import Footer from './footer/Footer'
-import HomePage from './pages/home-page/HomePage'
-import MyPets from './pages/my-pets/MyPets'
-import RegisterUser from './pages/register-user/RegisterUser'
-import RegisterProductForm from './product-form/RegisterProductForm'
+import Footer from './footer/Footer';
+import HomePage from './pages/home-page/HomePage';
+import MyPets from './pages/my-pets/MyPets';
+import RegisterUser from './pages/register-user/RegisterUser';
+import RegisterProductForm from './product-form/RegisterProductForm';
 import UserCreated from './pages/register-user/UserCreated';
 import EditUser from './pages/edit-user/EditUser';
 import DataUpdated from './pages/edit-user/DataUpdated';
@@ -16,6 +16,7 @@ import Products from './pages/products/Products';
 import RegisterProducts from './pages/register-products/RegisterProducts';
 import Cart from './pages/cart/Cart';
 import Payment from './pages/payment/Payment';
+import PaymentSuccess from './pages/payment/PaymentSuccess';
 import styles from './styles.css';
 import {
   Route,
@@ -49,6 +50,7 @@ class App extends React.Component {
           <Route path="/registerProducts" component={RegisterProducts}/>
           <Route path="/cart" component={Cart}/>
           <Route path="/payment" component={Payment}/>
+          <Route path="/paymentSuccess" component={PaymentSuccess}/>
           <Footer />
         </div>
       </HashRouter>
