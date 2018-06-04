@@ -118,4 +118,9 @@ export const increaseCatalogQuantity = (product) => {
 	}
 }
 
+export const emptyCart = () =>{
+	return {
+		type: 'EMPTY_CART'
+	}
+}
 

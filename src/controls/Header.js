@@ -26,9 +26,23 @@ class Header extends React.Component{
 
   //Calls logoff function from store
   logoff = () => {
+    this.emptyCart();
     this.props.logoff();
   }
 
+  //empties cart when logging off
+  emptyCart = () => {
+    
+    //replenishes product quantity to product catalog
+    for(let i=0; i<this.props.cartReducer.cart.length; i++){
+      for(let j=this.props.cartReducer.cart[i].count; j>0; j--){
+          let product = {id: this.props.cartReducer.cart[i].id};
+          this.props.increaseCatalogQuantity(product)
+      }
+    } 
+    this.props.emptyCart();
+
+  }
 
   render(){
     /*Renders header with links if user is logged in
@@ -91,7 +105,7 @@ class Header extends React.Component{
 
 const mapStateToProps = state => {
   return { userName: state.usersReducer.userName, userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
-    loggedin: state.usersReducer.loggedin };
+    loggedin: state.usersReducer.loggedin,cartReducer: state.cartReducer};
 };
 
 

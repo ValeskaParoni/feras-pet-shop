@@ -42,6 +42,7 @@ class Cart extends React.Component{
     super(props, context);
   }
 
+
   render(){
 
     if (!this.props.loggedin || this.props.isAdmin){
