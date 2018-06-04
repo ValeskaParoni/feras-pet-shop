@@ -324,6 +324,9 @@ input[type=file]{
 .button_with_margin{
     margin-right: 5px;
 }
+.disabled_button{
+	background-color: gray;
+}
 
 .product {
 	border: 2px solid black;
@@ -472,6 +475,10 @@ button:hover {
 
 .register_product_button{
     margin-bottom: 5px;
+}
+
+#cart_total_value {
+	margin-right: 20px;
 }
 
 @media screen and (max-width: 850px){

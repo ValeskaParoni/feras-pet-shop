@@ -92,3 +92,30 @@ export const deleteProduct = (productId) => {
 		productId
 	}
 }
+
+export const addToCart = (product) => {
+	return {
+		type: 'ADD_TO_CART',
+		product
+	}
+}
+export const decreaseCartQuantity = (product) => {
+	return {
+		type: 'DECREASE_CART_QUANTITY',
+		product
+	}
+}
+export const decreaseCatalogQuantity = (product) => {
+	return {
+		type: 'DECREASE_CATALOG_QUANTITY',
+		product
+	}
+}
+export const increaseCatalogQuantity = (product) => {
+	return {
+		type: 'INCREASE_CATALOG_QUANTITY',
+		product
+	}
+}
+
+

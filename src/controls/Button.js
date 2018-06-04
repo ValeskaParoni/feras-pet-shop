@@ -13,15 +13,12 @@ class Button extends React.Component{
   }
   
   render(){
-    if(this.props.buttonClass != ""){
-      return (
-        <button className={this.props.buttonClass} onClick={this.props.onClick}>{this.props.text}</button>
-      );
-    }
 
-    return (
-      <button className='product_add_button' onClick={this.props.onClick}>{this.props.text}</button>
-    );
+    const classes = []
+    this.props.buttonClass != ""?classes.push(this.props.buttonClass):classes.push('product_add_button')
+    this.props.disabled && classes.push('disabled_button')
+
+    return <button className={classes.join(' ')} onClick={this.props.onClick} disabled={this.props.disabled}>{this.props.text}</button>
   }
 }
 

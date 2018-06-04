@@ -37,6 +37,31 @@ const productsReducer = (state = initialState, action) => {
                 products: state.registeredProducts.filter((product, i) => product.id !== action.productId)
 
             }
+    case 'DECREASE_CATALOG_QUANTITY':{
+      const idx = state.registeredProducts.findIndex(product => product.id == action.product.id)
+
+      const newProducts = [...state.registeredProducts]
+      if (idx>=0){
+        newProducts[idx].productQuantity--
+      }
+      return {
+        ...state,
+        registeredProducts: newProducts,
+      }
+    }
+    case 'INCREASE_CATALOG_QUANTITY':{
+      const idx = state.registeredProducts.findIndex(product => product.id == action.product.id)
+
+      const newProducts = [...state.registeredProducts]
+      if (idx>=0){
+        newProducts[idx].productQuantity++
+      }
+      return {
+        ...state,
+        registeredProducts: newProducts,
+      }
+    }
+
 
 		default:
 			return state;

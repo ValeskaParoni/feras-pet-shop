@@ -3,12 +3,14 @@ import productsReducer from './productsReducer'
 import servicesReducer from './servicesReducer'
 import usersReducer from './usersReducer'
 import petsReducer from './petsReducer'
+import cartReducer from './cartReducer'
 
 const reducers = combineReducers({
 	productsReducer,
 	servicesReducer,
     usersReducer,
-    petsReducer
+    petsReducer,
+    cartReducer
 });
 
 export default reducers;
