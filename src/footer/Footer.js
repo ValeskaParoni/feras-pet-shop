@@ -1,7 +1,8 @@
 import React from 'react';
 
 /*
-no props
+  The footer section of the webpage
+  no props
 */
 
 class Footer extends React.Component{

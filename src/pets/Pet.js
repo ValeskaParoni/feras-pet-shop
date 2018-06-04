@@ -4,6 +4,8 @@ import * as actions from '../actions';
 import Button from '../controls/Button';
 
 /*
+Shows a single pet. Handles pet editing.
+
 props:
   this.props.id: id of the pet to be shown
 
@@ -34,6 +36,9 @@ class Pet extends React.Component{
      
   }
 
+
+  //get age of the pet according to birthdate
+  //used to display pet age
   getAge = (dateString) =>{
 
     var today = new Date();
@@ -52,12 +57,14 @@ class Pet extends React.Component{
     return ageString;
   }
 
+  //turn pet editing on
   editPet = () =>{
 
     this.setState({petEditOn: true});
 
   }
 
+  //cancels editing of pet and returns form values to previous state
   cancelEdit = () =>{
 
 
@@ -76,7 +83,7 @@ class Pet extends React.Component{
     );
   }
 
-
+  //Checks if form is valid and saves edits to pet
   handleSubmitPet = (event) => {
     event.preventDefault();
     if(this.validate())
@@ -109,6 +116,7 @@ class Pet extends React.Component{
 
   }
 
+  //deletes a pet
   deletePet = () => {
 
     //confirms deletion

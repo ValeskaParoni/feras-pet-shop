@@ -14,7 +14,9 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'
 
 /*
-Update nav bar as needed!
+  The website header.
+    Includes login bar.
+    Navlinks change according to whether used is logged out, a client of an admin
 */
 
 class Header extends React.Component{
@@ -85,6 +87,8 @@ class Header extends React.Component{
     }
   }
 }
+
+
 const mapStateToProps = state => {
   return { userName: state.usersReducer.userName, userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
     loggedin: state.usersReducer.loggedin };

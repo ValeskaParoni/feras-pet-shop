@@ -47,7 +47,7 @@ class LoginForm extends React.Component{
 
   }
 
-  
+  //updates form when user modifies it  
   handleChange(event) {
     const target = event.target;
     const value = target.value;
@@ -59,9 +59,10 @@ class LoginForm extends React.Component{
     });
   }
 
+  //login user
   handleSubmit(event) {
     event.preventDefault();
-    this.validateLogin();   
+    this.validateLogin();  //validates login
   }
 
   

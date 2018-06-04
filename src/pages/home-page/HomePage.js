@@ -9,8 +9,9 @@ import productsCategories from '../../../resources/productsCategories.json'
 import servicesCatalog from '../../../resources/servicesCatalog.json'
 import servicesCategories from '../../../resources/servicesCategories.json'
 
-/* No props
-  TODO: add onclick function to button!
+/* 
+  Main page to website
+  No props
 */
 
 class HomePage extends React.Component{

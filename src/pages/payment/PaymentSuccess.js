@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+//Message displayed when payment is complete successfully
 class PaymentSuccess extends React.Component{
   constructor (props, context){
     super(props, context);
@@ -8,8 +8,6 @@ class PaymentSuccess extends React.Component{
 
   render(){
   
-    //if not logged in or not admin
-    //display error
     return (
       <section className="content">
         <p>Pagamento realizado com sucesso!</p>

@@ -9,6 +9,8 @@ import {
 //import styles from '../styles.css';
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
+
+//Shopping cart
 const CartProduct = ({productName, productDescription, productType, productPrice, count, productPicture, increaseQuantity, decreaseQuantity, productQuantity}) => {
 
   return (

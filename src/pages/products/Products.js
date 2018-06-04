@@ -9,6 +9,9 @@ import {
   NavLink
 } from "react-router-dom";
 //import styles from '../styles.css';
+
+
+//Products page
 class Products extends React.Component{
   constructor (props, context){
     super(props, context);

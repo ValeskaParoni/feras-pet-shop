@@ -6,13 +6,9 @@ import {withRouter} from 'react-router-dom';
 import {
   NavLink
 } from "react-router-dom";
-/*
-props:
-  this.props.id: id of the pet to be shown
 
-  TODO: add next service
-*/
 
+//Displays a single product on a page
 class Product extends React.Component{
   constructor (props, context){
     super(props, context);
@@ -25,18 +21,22 @@ class Product extends React.Component{
     this.handleChange = this.handleChange.bind(this);
   }
 
+  //turns on product editing
   editProduct = () =>{
 
     this.setState({productEditOn: true});
 
   }
 
+  //adds a product to cart
   addToCart = (product) =>{
     console.log('add product to cart')
     this.props.decreaseCatalogQuantity(product)
     this.props.addToCart(product)
 
   }
+
+  //cancels product editing and returns data to previous state
   cancelEdit = () =>{
 
 
@@ -56,6 +56,8 @@ class Product extends React.Component{
                   }
     );
   }
+
+  //updates form when there's any change
   handleChange(event) {
     const target = event.target;
     const value = target.value;
@@ -66,11 +68,17 @@ class Product extends React.Component{
     this.setState({productCopy});
 
   }
+
+  //Validates form and adds product to "database"
   handleSubmitProduct = (event) => {
     event.preventDefault();
     if(this.validate())
       this.previewFile();
   }
+
+  //Tests if form is valid
+  //  returns false if invalid
+  //  returns true if valid
   validate = () => {
     let error = false;
 
@@ -97,11 +105,13 @@ class Product extends React.Component{
     }
 
   }
+
+  //handles product deletion
   deleteProduct = () => {
 
     //confirms deletion
     if(confirm("Tem certeza que deseja excluir o produto "+this.state.product.productName+"?")){
-      //delete pet and hide component
+      //delete product and hide component
       this.props.deleteProduct(this.state.product.id);
       this.setState(
                   {
@@ -112,6 +122,8 @@ class Product extends React.Component{
     }
 
   }
+
+  //uploads picture file and updates product on "database"
   previewFile = () => {
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
@@ -123,14 +135,17 @@ class Product extends React.Component{
       this.updateProduct();
     }, false);
 
+    //file loaded correctly
     if (file) {
       reader.readAsDataURL(file);
       message.innerHTML = "Carregando imagem...";
-    }else{
+    }else{ //if no file could be loaded, use default image
       this.state.productPicture = "images/usuario.png";
       this.updateProduct();
     }
   }
+
+  //updates product details
   updateProduct = () => {
     let product = {
         "id": this.state.productCopy.id,
@@ -147,6 +162,7 @@ class Product extends React.Component{
     //this.props.history.push("/products");
 
   }
+  
   render(){
     if(this.state.deleted){
       return null;

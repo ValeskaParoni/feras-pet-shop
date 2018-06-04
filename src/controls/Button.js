@@ -1,6 +1,8 @@
 import React from 'react';
 
 /*
+A simple button
+
 props:
   this.props.onClick = function to be called when the button is clicked
   this.props.text = text inside the button

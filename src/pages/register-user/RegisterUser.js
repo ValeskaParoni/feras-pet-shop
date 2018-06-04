@@ -9,6 +9,8 @@ import InvalidAccessMessage from '../../controls/InvalidAccessMessage'
 
 
 /* 
+  Register user page
+
   Gets props from redux:
     loggedin: true if user is logged in, false otherwise
     isAdmin: true if user is admin
