@@ -50,6 +50,30 @@ a exclusão no diálogo.
 e não aparecerá mais na página de produtos.
 
 		4) Serviços
+			4.a) Criar serviço
+				-Clique em "Adicionar serviço"
+				-Preencha o formulário como desejado.
+				  Ex:
+					Nome: Coleira roxa
+					Descrição: Uma coleira roxa luxuosa para seu canino!
+					Categoria: Acessórios
+					Preço: 25.00
+					Quantidade: 5
+					Foto: qualquer imagem no computador
+				-Clique no botão "Salvar". O novo serviço cadastrado deve
+aparecer na página de serviços.
+					
+			4.b) Editar serviço
+				-Clique no botão editar serviço de qualquer serviço da lista
+				-Altere quantas informações desejar no formulário de edição
+				-Clique no botão "Salvar". As informações alteradas do serviço devem aparecer ao retornar agora na página de serviços.
+
+			4.c) Excluir serviço
+				-Clique no botão editar serviço de qualquer serviço da lista
+				-Clique no botão "Excluir" no formulário de edição e confirme
+a exclusão no diálogo.
+				-O serviço deve agora ter sido excluído da lista de serviços
+e não aparecerá mais na página de serviços.
 
 		5) Criar usuário
 			-Logado como administrador, clique na opção "Cadastrar Usuário" no 
@@ -67,8 +91,6 @@ da seguinte forma:
 com os dados do usuário digitados no formulário, poderá verificar que o novo usuário foi
 criado com sucesso.
 			
-		6) Relatórios gerenciais
-			TODO
 	
 
 	-Funções do cliente:
@@ -87,7 +109,13 @@ deve ter sido alterada
 			-Preencha em formulário e clique em "Realizar pagamento"
 			-Uma mensagem de sucesso deve aparecer na tela
 
-		2) Marcar serviço TODO
+		2) Marcar serviço 
+			-Logado como cliente, clique em "Serviços no header"
+			-Clique no botão "Agendar" em um dos serviços
+			-Selecione um pet, dia e hora.
+			-Clique em confirmar. Agora, se consultar seu pet, o serviço
+deve aparecer sob "serviços agendados"
+
 
 		3) Consultar pets
 			-Logado como cliente, clique em "Meus Pets" no header.
@@ -117,6 +145,11 @@ aparecer atualizadas na página.
 Clique no botão "Excluir" e confirme a ação na janela de diálogo.
 				-O pet agora deve ter sido excluído e não aparecer mais na
 página Meus Pets.
+
+			5.d) Consultar serviços
+				-Clique em "Serviços agendados"
+				-Uma tabela deve aparecer com os detalhes dos serviços agendados para o pet.
+				-Caso a tabela esteja vazia, nenhum serviço está agendado para o pet.
 
 		4) Alterar cadastro
 			-Logado, clique em "Alterar Cadastro" 

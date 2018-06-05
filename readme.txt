@@ -74,6 +74,8 @@ de erro quando o usuario acessa uma página indevida
 
 		-./pages: diretório que contém os compontenes que formam cada "página"
 da aplicação
+			-./calendar: diretório da página de agendamento de serviços
+				-CalendarPage.js: componente da página de agendamento
 			-./cart: diretório da página do carrinho de compras
 				-Cart.js: componente do carrinho de compras
 			-./edit-user: diretório página de editar o cadastro de um usuário
