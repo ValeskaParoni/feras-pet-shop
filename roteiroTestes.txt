@@ -1,0 +1,159 @@
+﻿Trabalho 2: Funcionalidade do Cliente da Aplicação Pet Shop
+Introdução ao Desenvolvimento Web – 1º sem. 2018
+Grupo:
+	Chan Ken Chen - 9436170
+	Cristiano Chiaramelli - 9293053
+	Elisa Saltori Trujillo - 8551100
+	Valeska Paroni Silva - 
+
+Roteiro de testes:
+
+	-Funções do administrador:
+		
+		1) Login inválido
+			-Na página inicial do site, clique no botão de login sem 
+digitar nada nos campos. Uma mensagem de erro deve aparecer na tela.
+			-Na página inicial do site, digite uma combinação inválida
+de email/senha (ex: "usuario", "pass"). Uma mensagem de erro deve aparecer na tela.
+	
+		2) Login válido
+			-Na página inicial do site, digite nos campos de login: 
+"admin@email.com", "pass123" (o cadastro de administrador pré-registrado na aplicação).
+			-A barra de navegação deve se alterar com as opções do administrador.
+
+		3) Produtos 
+			-Logado como administrador, clique em "Produtos" no header
+
+			3.a) Criar produto
+				-Clique em "Adicionar Produto"
+				-Preencha o formulário como desejado.
+				  Ex:
+					Nome: Coleira roxa
+					Descrição: Uma coleira roxa luxuosa para seu canino!
+					Categoria: Acessórios
+					Preço: 25.00
+					Quantidade: 5
+					Foto: qualquer imagem no computador
+				-Clique no botão "Salvar". O novo produto cadastrado deve
+aparecer na página de produtos.
+					
+			3.b) Editar produto
+				-Clique no botão editar produto de qualquer produto da lista
+				-Altere quantas informações desejar no formulário de edição
+				-Clique no botão "Salvar". As informações alteradas do produto devem aparecer ao retornar agora na página de produtos.
+
+			3.c) Excluir produto
+				-Clique no botão editar produto de qualquer produto da lista
+				-Clique no botão "Excluir" no formulário de edição e confirme
+a exclusão no diálogo.
+				-O produto deve agora ter sido excluído da lista de produtos
+e não aparecerá mais na página de produtos.
+
+		4) Serviços
+			4.a) Criar serviço
+				-Clique em "Adicionar serviço"
+				-Preencha o formulário como desejado.
+				  Ex:
+					Nome: Coleira roxa
+					Descrição: Uma coleira roxa luxuosa para seu canino!
+					Categoria: Acessórios
+					Preço: 25.00
+					Quantidade: 5
+					Foto: qualquer imagem no computador
+				-Clique no botão "Salvar". O novo serviço cadastrado deve
+aparecer na página de serviços.
+					
+			4.b) Editar serviço
+				-Clique no botão editar serviço de qualquer serviço da lista
+				-Altere quantas informações desejar no formulário de edição
+				-Clique no botão "Salvar". As informações alteradas do serviço devem aparecer ao retornar agora na página de serviços.
+
+			4.c) Excluir serviço
+				-Clique no botão editar serviço de qualquer serviço da lista
+				-Clique no botão "Excluir" no formulário de edição e confirme
+a exclusão no diálogo.
+				-O serviço deve agora ter sido excluído da lista de serviços
+e não aparecerá mais na página de serviços.
+
+		5) Criar usuário
+			-Logado como administrador, clique na opção "Cadastrar Usuário" no 
+header.
+			-Preencha o formulário. Para o teste, o formulário foi preenchido
+da seguinte forma:
+				Nome: "Fulano"
+				Endereço: "Rua do Trabalho, 22"
+				Email: "fulano@email.com"
+				Senha:"pass"
+				Telefone:"(16)3453-2432"
+				Administrador: Não marcado
+				Foto: Qualquer foto do computador
+			-Clique em "Confirmar". Agora, se clicar em "Sair" e tentar logar
+com os dados do usuário digitados no formulário, poderá verificar que o novo usuário foi
+criado com sucesso.
+			
+	
+
+	-Funções do cliente:
+		Logue em uma conta de cliente. A aplicação vem com o usuário 
+"cliente@email.com"/"pass123" pré-cadastrado.
+		
+		1) Comprar produto
+			-Logado como cliente, clique em "Produtos" no header.
+			-Clique no botão "adicionar ao carrinho"
+			-O carrinho deve aparecer com o objeto selecionado.
+			-Incremente e decremente a quantidade
+			-Retorne a página "Produtos". A quantidade do objeto adicionado
+deve ter sido alterada
+			-Clique em "Carrinho de compras"
+			-Clique em "Finalizar"
+			-Preencha em formulário e clique em "Realizar pagamento"
+			-Uma mensagem de sucesso deve aparecer na tela
+
+		2) Marcar serviço 
+			-Logado como cliente, clique em "Serviços no header"
+			-Clique no botão "Agendar" em um dos serviços
+			-Selecione um pet, dia e hora.
+			-Clique em confirmar. Agora, se consultar seu pet, o serviço
+deve aparecer sob "serviços agendados"
+
+
+		3) Consultar pets
+			-Logado como cliente, clique em "Meus Pets" no header.
+			-A página deve exibir todos os pets cadastrados para o usuário.
+ 
+			5.a) Registrar pet
+				-Na página Meus Pets, clique no botão "Cadastrar novo pet"
+				-Preencha o formulário. Para o teste, foram usados os 
+seguintes dados:
+					Nome: "Marília"
+					Data de nascimento: "10/10/2010"
+					Raça: "Poodle"
+					Foto: uma foto qualquer no computador
+				-Clique no botão "Confirmar". Agora, o novo pet cadastrado
+deve aparecer na página "Meus Pets"
+
+			5.b) Editar pet
+				-Em qualquer um dos pets, clique em "Editar cadastro"
+				-O cadastro do pet deve ser exibido em forma de formulário.
+Altere todas as informações que desejar.
+				-Clique no botão "Confirmar". As informações do pet devem 
+aparecer atualizadas na página.
+
+			5.c) Excluir pet
+				-Em qualquer um dos pets, clique em "Editar cadastro"
+				-O cadastro do pet deve ser exibido em forma de formulário.
+Clique no botão "Excluir" e confirme a ação na janela de diálogo.
+				-O pet agora deve ter sido excluído e não aparecer mais na
+página Meus Pets.
+
+			5.d) Consultar serviços
+				-Clique em "Serviços agendados"
+				-Uma tabela deve aparecer com os detalhes dos serviços agendados para o pet.
+				-Caso a tabela esteja vazia, nenhum serviço está agendado para o pet.
+
+		4) Alterar cadastro
+			-Logado, clique em "Alterar Cadastro" 
+			-Uma página deve aparecer com os dados atuais do usuário.
+			-Altere as informações desejadas e clique em "Confirmar"
+			-Clicando em "Alterar Cadastro" novamente, as informações do 
+usuário deverão ter sido alteradas de acordo.

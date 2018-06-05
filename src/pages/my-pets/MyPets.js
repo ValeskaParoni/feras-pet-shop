@@ -62,7 +62,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-// export default HomePage;
 export default connect(
   mapStateToProps,
   actions

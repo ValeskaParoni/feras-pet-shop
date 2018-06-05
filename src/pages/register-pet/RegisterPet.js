@@ -7,7 +7,7 @@ import {
   NavLink
 } from "react-router-dom";
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
 /*
 Page for registering a pet
@@ -117,7 +117,7 @@ class RegisterPet extends React.Component{
       error = true;
 
     let petBirthdate = new Date(this.state.birthdate);
-    if(!petBirthdate){
+    if(petBirthdate == "Invalid Date"){
       error = true;
     }
 
@@ -179,6 +179,7 @@ const mapStateToProps = state => {
   return { 
           userId: state.usersReducer.userId, 
           loggedin: state.usersReducer.loggedin,
+          isAdmin: state.usersReducer.isAdmin,
           pets: state.petsReducer.pets
    };
 };

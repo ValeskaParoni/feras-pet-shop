@@ -1,6 +1,6 @@
 import React from 'react';
-import RegisterProductForm from '../../product-form/RegisterProductForm'
-import Product from './Product'
+import RegisterServiceForm from '../../service-form/RegisterServiceForm'
+import Service from './Service'
 import { connect } from 'react-redux';
 import * as actions from '../../actions'
 import {withRouter} from 'react-router-dom';
@@ -8,11 +8,9 @@ import Button from '../../controls/Button';
 import {
   NavLink
 } from "react-router-dom";
-//import styles from '../styles.css';
 
-
-//Products page
-class Products extends React.Component{
+//Services page
+class Services extends React.Component{
   constructor (props, context){
     super(props, context);
   }
@@ -20,15 +18,15 @@ class Products extends React.Component{
   render(){
     let but;
     if (this.props.isAdmin == true) {
-      but = <NavLink to="/registerProducts" id='register_product_link'><Button buttonClass="register_product_button" text="Adicionar produto"/></NavLink>
+      but = <NavLink to="/registerServices" id='register_service_link'><Button buttonClass="register_service_button" text="Adicionar serviço"/></NavLink>
     }
     return (
           <section className="content">
-          <h2>Produtos</h2>
+          <h2>Serviços</h2>
           {but}
           <br/>
-          {this.props.registeredProducts.filter(product => product.productQuantity>0).map((product)=>{
-              return (<Product id={product.id} key={product.id}/>);
+          {this.props.registeredServices.map((service)=>{
+              return (<Service id={service.id} key={service.id}/>);
           })}
           <div className="clearfix"></div>
           </section>
@@ -39,10 +37,10 @@ class Products extends React.Component{
 }
 const mapStateToProps = state => {
   return { userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
-    loggedin: state.usersReducer.loggedin, registeredProducts: state.productsReducer.registeredProducts };
+    loggedin: state.usersReducer.loggedin, registeredServices: state.servicesReducer.registeredServices };
 };
 
 export default connect(
   mapStateToProps,
   actions
-)(withRouter(Products));
+)(withRouter(Services));

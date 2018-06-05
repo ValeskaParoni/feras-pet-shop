@@ -5,10 +5,12 @@ import {
   NavLink
 } from "react-router-dom";
 import { connect } from 'react-redux';
-import * as actions from '../actions'
-import {withRouter} from 'react-router-dom'
+import * as actions from '../actions';
+import {withRouter} from 'react-router-dom';
+
+
 /*
-On click functions still missing
+  Form for adding new products to "database"
 */
 class RegisterProductForm extends React.Component{
   constructor (props, context){
@@ -25,6 +27,8 @@ class RegisterProductForm extends React.Component{
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
+  //updates form
   handleChange(event) {
    const target = event.target;
    const value = target.value;
@@ -35,11 +39,15 @@ class RegisterProductForm extends React.Component{
      [name]: value
    });
   }
+
+  //checks if form is valid, uploads picture and saves product to "database"
   handleSubmitProduct = (event) => {
     event.preventDefault();
     if(this.validate())
       this.previewFile();
   }
+
+  //loads picture file
   previewFile = () => {
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
@@ -60,6 +68,7 @@ class RegisterProductForm extends React.Component{
     }
   }
 
+  //add new product
   registerProduct = () => {
     let id = this.props.registeredProducts.length+1;
     let newProduct = {
@@ -73,11 +82,12 @@ class RegisterProductForm extends React.Component{
     }
     this.props.addNewProduct(newProduct);
 
-    //changes page from form into success message
+    //changes page back to products page
     this.props.history.push("/products");
 
   }
 
+  //validates form data
   validate = () => {
     let error = false;
 

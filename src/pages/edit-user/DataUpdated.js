@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+//Succes message when user details are updated
 class DataUpdated extends React.Component{
   constructor (props, context){
     super(props, context);
@@ -8,8 +9,6 @@ class DataUpdated extends React.Component{
 
   render(){
   
-    //if not logged in or not admin
-    //display error
     return (
       <section className="content">
         <p>Dados atualizados com sucesso!</p>

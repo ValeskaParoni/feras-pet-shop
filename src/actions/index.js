@@ -93,8 +93,111 @@ export const deleteProduct = (productId) => {
 	}
 }
 
+
 export const nextWeek = () => {
 	return {
 		type: 'NEXT_WEEK'
+	}
+}
+
+export const addToCart = (product) => {
+	return {
+		type: 'ADD_TO_CART',
+		product
+	}
+}
+export const decreaseCartQuantity = (product) => {
+	return {
+		type: 'DECREASE_CART_QUANTITY',
+		product
+	}
+}
+export const decreaseCatalogQuantity = (product) => {
+	return {
+		type: 'DECREASE_CATALOG_QUANTITY',
+		product
+	}
+}
+export const increaseCatalogQuantity = (product) => {
+	return {
+		type: 'INCREASE_CATALOG_QUANTITY',
+		product
+	}
+}
+
+export const emptyCart = () =>{
+	return {
+		type: 'EMPTY_CART'
+	}
+}
+
+export const addNewService = (newService) =>{
+	return {
+		type: "REGISTER_SERVICE",
+		newService
+	}
+}
+
+export const updateService = (updatedService) => {
+	return {
+		type: "EDIT_SERVICE",
+		updatedService
+	}
+}
+
+export const deleteService = (serviceId) => {
+	return {
+		type: "DELETE_SERVICE",
+		serviceId
+	}
+}
+
+
+export const insertOrder = (products) => {
+	return {
+		type: 'INSERT_ORDER',
+		products
+	}
+}
+
+export const restoreCatalogQuantity = (products) => {
+	return {
+		type: 'RESTORE_CATALOG_QUANTITY',
+		products,
+	}
+}
+
+export const scheduleService = (scheduledService) =>{
+	return{
+		type: "SCHEDULE_SERVICE",
+		scheduledService
+	}
+}
+
+export const removeScheduledService = (scheduleId) =>{
+	return{
+		type: "REMOVE_SCHEDULED_SERVICE",
+		scheduleId
+	}
+}
+
+export const updateSchedule = (updatedSchedule) =>{
+	return(
+		type: "EDIT_SCHEDULE",
+		updatedSchedule
+	)
+}
+
+export const selectService = (serviceId) =>{
+	return{
+		type: "SELECT_SERVICE",
+		serviceId
+	}
+}
+
+export const setService = (service) => {
+	return {
+		type: 'SET_SERVICE',
+		service
 	}
 }

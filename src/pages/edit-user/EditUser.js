@@ -9,6 +9,8 @@ import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
 
 /* 
+  Page to edit user details
+
   Gets props from redux:
     loggedin: true if user is logged in, false otherwise
     isAdmin: true if user is admin

@@ -14,7 +14,9 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'
 
 /*
-Update nav bar as needed!
+  The website header.
+    Includes login bar.
+    Navlinks change according to whether used is logged out, a client of an admin
 */
 
 class Header extends React.Component{
@@ -24,9 +26,23 @@ class Header extends React.Component{
 
   //Calls logoff function from store
   logoff = () => {
+    this.emptyCart();
     this.props.logoff();
   }
 
+  //empties cart when logging off
+  emptyCart = () => {
+    
+    //replenishes product quantity to product catalog
+    for(let i=0; i<this.props.cartReducer.cart.length; i++){
+      for(let j=this.props.cartReducer.cart[i].count; j>0; j--){
+          let product = {id: this.props.cartReducer.cart[i].id};
+          this.props.increaseCatalogQuantity(product)
+      }
+    } 
+    this.props.emptyCart();
+
+  }
 
   render(){
     /*Renders header with links if user is logged in
@@ -46,7 +62,7 @@ class Header extends React.Component{
 
                     <div id="logged_user_options">
                       <span id="username">Usuário:<br/> {this.props.userName}</span>
-                      <NavLink to="/reports" id="link_adm_users">Relatórios gerenciais</NavLink>
+                      <NavLink to="/history" id="link_adm_users">Relatórios gerenciais</NavLink>
                       <NavLink to="/editUser">Alterar cadastro</NavLink>
                       <NavLink to="/" onClick={this.logoff}>Sair</NavLink>
                     </div>
@@ -64,7 +80,7 @@ class Header extends React.Component{
                     <NavLink to='/mypets'>Meus Pets</NavLink>
                     <div id="logged_user_options">
                       <span id="username">Usuário:<br/>{this.props.userName}</span>
-                      <NavLink to="/shoppingCart" id="link_change_user">Carrinho de compras</NavLink>
+                      <NavLink to="/cart" id="link_change_user">Carrinho de compras</NavLink>
                       <NavLink to="/editUser">Alterar cadastro</NavLink>
                       <NavLink to="/" onClick={this.logoff}>Sair</NavLink>
                     </div>
@@ -85,9 +101,11 @@ class Header extends React.Component{
     }
   }
 }
+
+
 const mapStateToProps = state => {
   return { userName: state.usersReducer.userName, userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
-    loggedin: state.usersReducer.loggedin };
+    loggedin: state.usersReducer.loggedin,cartReducer: state.cartReducer};
 };
 
 

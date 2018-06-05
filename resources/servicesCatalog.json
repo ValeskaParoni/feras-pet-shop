@@ -1,7 +1,16 @@
 [
-	{
-		"id": 1,
-		"name": "Banho e tosa",
-		"price": 30
-	}
+    {
+        "id": 1,
+        "serviceName": "Banho",
+        "serviceDescription": "O  banho e tosa oferece procedimentos de estética canina realizados por funcionários diplomados na área, toalhas individuais, além de permitir que o proprietário acompanhe o manejo do seu animal através de um vidro",
+        "servicePrice": 40.00,
+        "servicePicture": "./images/banho.jpg"
+    },
+    {
+        "id": 2,
+        "serviceName": "Vacina",
+        "serviceDescription": "Vacinação completa para o seu animal.",
+        "servicePrice": 70.00,
+        "servicePicture": "./images/vacina.jpg"
+    }
 ]

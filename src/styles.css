@@ -170,7 +170,7 @@ p {
 	float: left;
 }
 
-input[type=text], input[type=tel], input[type=email], input[type=checkbox], input[type=password], textarea{
+input[type=text], input[type=tel], input[type=email], input[type=checkbox], input[type=password], input[type=month], input[type=number], textarea{
 	padding: 2px;
 	margin-left: 10px;
     margin-top: 5px;
@@ -360,6 +360,9 @@ input[type=file]{
 .button_with_margin{
     margin-right: 5px;
 }
+.disabled_button{
+	background-color: gray;
+}
 
 .product {
 	border: 2px solid black;
@@ -495,6 +498,10 @@ button:hover {
 }
 }
 
+#cart_total_value {
+	margin-right: 20px;
+}
+
 @media screen and (max-width: 850px){
 
 	.pet_profile img{
@@ -595,6 +602,7 @@ button:hover {
 	max-width: 80%;
 }
 
+
 .calendar-client-name{
   text-align: center; display: flex; justify-content: center; color: #fff; background-color: #;
 }
@@ -608,4 +616,7 @@ button:hover {
 
 .calendar-dates{
   height: 40px;
+
+select {
+    margin-left: 20px;
 }

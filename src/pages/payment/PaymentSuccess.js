@@ -1,16 +1,16 @@
 import React from 'react';
 
-//Page with message for when an user is successfully created
-class UserCreated extends React.Component{
+//Message displayed when payment is complete successfully
+class PaymentSuccess extends React.Component{
   constructor (props, context){
     super(props, context);
   }
 
   render(){
-
+  
     return (
       <section className="content">
-        <p>Usuário criado com sucesso!</p>
+        <p>Pagamento realizado com sucesso!</p>
       </section>
     );
    
@@ -18,4 +18,4 @@ class UserCreated extends React.Component{
   }
 }
 
-export default UserCreated;
+export default PaymentSuccess;

@@ -3,17 +3,25 @@ import Button from './controls/Button';
 import Image from './controls/Image';
 import Link from './controls/Link';
 import Header from './controls/Header';
-import Footer from './footer/Footer'
-import HomePage from './pages/home-page/HomePage'
-import MyPets from './pages/my-pets/MyPets'
-import RegisterUser from './pages/register-user/RegisterUser'
-import RegisterProductForm from './product-form/RegisterProductForm'
+import Footer from './footer/Footer';
+import HomePage from './pages/home-page/HomePage';
+import MyPets from './pages/my-pets/MyPets';
+import RegisterUser from './pages/register-user/RegisterUser';
+import RegisterProductForm from './product-form/RegisterProductForm';
 import UserCreated from './pages/register-user/UserCreated';
 import EditUser from './pages/edit-user/EditUser';
 import DataUpdated from './pages/edit-user/DataUpdated';
 import RegisterPet from './pages/register-pet/RegisterPet';
 import Products from './pages/products/Products';
 import RegisterProducts from './pages/register-products/RegisterProducts';
+import Services from './pages/services/Services';
+import RegisterServices from './pages/register-service/RegisterServices';
+import Cart from './pages/cart/Cart';
+import Payment from './pages/payment/Payment';
+import ServicePayment from './pages/payment/ServicePayment';
+import PaymentSuccess from './pages/payment/PaymentSuccess';
+import History from './pages/history/History';
+import CalendarPage from './pages/calendar/CalendarPage';
 import styles from './styles.css';
 import MyCalendar from './pages/my-calendar/MyCalendar';
 import {
@@ -47,6 +55,14 @@ class App extends React.Component {
           <Route path="/products" component={Products}/>
           <Route path="/registerProducts" component={RegisterProducts}/>
           <Route path="/mycalendar" component={MyCalendar}/>
+          <Route path="/cart" component={Cart}/>
+          <Route path="/payment" component={Payment}/>
+          <Route path="/servicepayment" component={ServicePayment}/>
+          <Route path="/paymentSuccess" component={PaymentSuccess}/>
+          <Route path="/services" component={Services}/>
+          <Route path="/registerServices" component={RegisterServices}/>
+          <Route path="/history" component={History}/>
+          <Route path="/calendar" component={CalendarPage}/>
           <Footer />
         </div>
       </HashRouter>
