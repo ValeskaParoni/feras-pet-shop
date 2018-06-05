@@ -62,7 +62,7 @@ class Header extends React.Component{
 
                     <div id="logged_user_options">
                       <span id="username">Usuário:<br/> {this.props.userName}</span>
-                      <NavLink to="/reports" id="link_adm_users">Relatórios gerenciais</NavLink>
+                      <NavLink to="/history" id="link_adm_users">Relatórios gerenciais</NavLink>
                       <NavLink to="/editUser">Alterar cadastro</NavLink>
                       <NavLink to="/" onClick={this.logoff}>Sair</NavLink>
                     </div>

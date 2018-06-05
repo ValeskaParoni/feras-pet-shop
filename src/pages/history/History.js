@@ -25,10 +25,7 @@ class History extends React.Component{
     this.state = {}
   }
 
-
-
   render(){
-
 
     const productsList = []
 
@@ -45,13 +42,13 @@ class History extends React.Component{
       }
     })
 
-    // if (!this.props.loggedin || !this.props.isAdmin){
-    //   return (
-    //     <section className="content">
-    //       <InvalidAccessMessage/>
-    //     </section>
-    //   )
-    // }
+    if (!this.props.loggedin || !this.props.isAdmin){
+      return (
+        <section className="content">
+          <InvalidAccessMessage/>
+        </section>
+      )
+    }
 
     return (
       <section className="content">
