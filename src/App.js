@@ -18,12 +18,10 @@ import Services from './pages/services/Services';
 import RegisterServices from './pages/register-service/RegisterServices';
 import Cart from './pages/cart/Cart';
 import Payment from './pages/payment/Payment';
+import ServicePayment from './pages/payment/ServicePayment';
 import PaymentSuccess from './pages/payment/PaymentSuccess';
-<<<<<<< HEAD
 import History from './pages/history/History';
-=======
 import CalendarPage from './pages/calendar/CalendarPage';
->>>>>>> ddd6a2ce562b927696ed7076dbbbf0346d0397e2
 import styles from './styles.css';
 import {
   Route,
@@ -57,6 +55,7 @@ class App extends React.Component {
           <Route path="/registerProducts" component={RegisterProducts}/>
           <Route path="/cart" component={Cart}/>
           <Route path="/payment" component={Payment}/>
+          <Route path="/servicepayment" component={ServicePayment}/>
           <Route path="/paymentSuccess" component={PaymentSuccess}/>
           <Route path="/services" component={Services}/>
           <Route path="/registerServices" component={RegisterServices}/>

@@ -23,8 +23,10 @@ class CalendarPage extends React.Component{
           availableSlots: [true,true,true,true,true,true,true,true,true,true], selectedHour: 8};
       }
     }
+  }
 
-
+  componentDidMount(){
+    this.showTimeSlots({target: {value: this.getTodayDate()}})
   }
 
   getTodayDate = () =>{
@@ -66,7 +68,6 @@ class CalendarPage extends React.Component{
 
     const target = event.target;
     const value = target.value;
-    const name = target.name;
 
     this.setState({selectedDay: value});
     const baseHour = 8;
@@ -118,7 +119,8 @@ class CalendarPage extends React.Component{
         "servicePrice": this.state.service.servicePrice,
         "servicePicture": this.state.service.servicePicture
     }
-    this.props.scheduleService(newService);
+    this.props.setService(newService)
+    // this.props.scheduleService(newService);
   }
   
   render(){
@@ -157,7 +159,7 @@ class CalendarPage extends React.Component{
               );
             })}
            </select><br/>
-          <NavLink to="/cart"><Button text="Confirmar" onClick={this.addToCart}/></NavLink>
+          <NavLink to="/servicepayment"><Button text="Confirmar" onClick={this.addToCart}/></NavLink>
           </div>
 
         </section>

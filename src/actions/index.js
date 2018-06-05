@@ -187,3 +187,10 @@ export const selectService = (serviceId) =>{
 		serviceId
 	}
 }
+
+export const setService = (service) => {
+	return {
+		type: 'SET_SERVICE',
+		service
+	}
+}

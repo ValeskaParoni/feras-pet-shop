@@ -51,6 +51,13 @@ const cartReducer = (state = initialState, action) => {
         }
       }
 
+      case 'SET_SERVICE': {
+        return {
+          ...state,
+          service: action.service
+        }
+      }
+
       default:
           return state;
     }

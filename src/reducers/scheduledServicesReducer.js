@@ -7,6 +7,14 @@ const scheduledServicesReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case 'SCHEDULE_SERVICE':
+
+        console.log('SERVICES', {
+                      ...state,
+                      "scheduledServices": [
+                          ...state.scheduledServices,
+                          action.scheduledService
+                      ]
+                  })
           return (
                   {
                       ...state,

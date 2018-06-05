@@ -36,7 +36,7 @@ const CartProduct = ({productName, productDescription, productType, productPrice
 
 
 //Shopping cart page
-class Cart extends React.Component{
+class Payment extends React.Component{
 
   constructor (props, context){
     super(props, context);
@@ -139,4 +139,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(withRouter(Cart));
+)(withRouter(Payment));
