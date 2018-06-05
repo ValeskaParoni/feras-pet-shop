@@ -584,3 +584,8 @@ button:hover {
 select {
     margin-left: 20px;
 }
+
+.margin_left_button {
+    margin-left: 5px;
+    margin-bottom: 5px;
+}

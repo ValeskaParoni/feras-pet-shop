@@ -75,6 +75,13 @@ a exclusão no diálogo.
 				-O serviço deve agora ter sido excluído da lista de serviços
 e não aparecerá mais na página de serviços.
 
+			4.d) Consultar serviços agendados
+				-Clique no botão "Ver serviços agendados"
+				-Uma tela deverá aparecer com uma tabela. A data máxima inicial é o dia de hoje.
+				-Caso nenhum serviço tenha sido agendado ainda pelo usuário, dois serviços pré-
+programados poderão ser checados. Alterando a data máxima para dia 11 de junho, dois serviços
+agendados para Morgana deverão aparecer: uma vacina e um banho. 
+
 		5) Criar usuário
 			-Logado como administrador, clique na opção "Cadastrar Usuário" no 
 header.
@@ -91,6 +98,16 @@ da seguinte forma:
 com os dados do usuário digitados no formulário, poderá verificar que o novo usuário foi
 criado com sucesso.
 			
+		6) Relatórios gerenciais
+			-Logado como administador, clique na opção "Relatórios gerenciais" no header.
+			-Uma página deve abrir com um seletor de datas e uma tabela com informações
+sobre vendas e serviços marcados.
+			-Se nenhuma compra ainda tiver sido feita, dois serviços apenas estarão em
+exibição: uma vacina e um banho. 
+			-Se alterada a data ou a categoria, o conteúdo da tabela deve alterar-se para
+mostrar as vendas e serviços marcados naquele período. Por exemplo, no caso inicial, caso
+a data máxima seja alterada ao dia 4 de junho, somente o serviço de banho deverá aparecer.
+A data do pedido de vacina é dia 5 junho, portanto não será exibida.
 	
 
 	-Funções do cliente:

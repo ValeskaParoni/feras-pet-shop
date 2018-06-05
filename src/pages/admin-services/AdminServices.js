@@ -9,26 +9,27 @@ import {
 //import styles from '../styles.css';
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
-const ListItem = ({name, type, quantity, price}) => {
+const ListItem = ({petName, serviceName, serviceDay, serviceTime, servicePrice}) => {
   return (
     <tr>
-      <td>{name}</td>
-      <td>{type}</td>
-      <td>{quantity}</td>
-      <td>{price}</td>
-      <td>{quantity*price}</td>
+      <td>{petName}</td>
+      <td>{serviceName}</td>
+      <td>{serviceDay}</td>
+      <td>{serviceTime}</td>
+      <td>{servicePrice}</td>
     </tr>
   )
 }
 
-class History extends React.Component{
+class AdminServices extends React.Component{
 
   constructor (props, context){
     super(props, context);
 
     this.state = {
       lowerDate: null,
-      higherDate: this.getTodayDate()
+      higherDate: this.getTodayDate(),
+      petName: null
     }
   }
 
@@ -86,89 +87,46 @@ class History extends React.Component{
   }
 
   render(){
-    console.log('state', this.state)
-    const productsList = []
 
-    if (this.state.type != 'servicos'){
-      this.props.ordersReducer.soldProducts
-      .filter(soldProduct => {
-        return (!this.state.lowerDate || this.getTheDate(soldProduct.date) >= this.state.lowerDate) && this.getTheDate(soldProduct.date) <= this.state.higherDate
-      })
-      .forEach(soldProduct => {
-        const search = productsList.find(product => product.id == soldProduct.id)
-
-        if (search){
-          search.count += soldProduct.count
-        } else {
-          productsList.push({
-            ...soldProduct,
-            type: 'PRODUCT',
-          })
-        }
-      })
-    }
     const servicesList = []
 
     if (this.state.type != 'produtos'){
       this.props.scheduledServicesReducer.scheduledServices
       .filter(soldService => {
-        return (!this.state.lowerDate || soldService.serviceOrderDate >= this.state.lowerDate) && soldService.serviceOrderDate <= this.state.higherDate
+        return (!this.state.lowerDate || soldService.serviceDate >= this.state.lowerDate) && soldService.serviceDate <= this.state.higherDate
       })
       .forEach(soldService => {
-        const search = servicesList.find(service => service.serviceName == soldService.serviceName)
-
-        if (search){
-          search.count++
-        } else {
           servicesList.push({
             ...soldService,
             count: 1,
             type: 'SERVICE'
           })
-        }
+        
       })
     }
 
-    const list = [...productsList, ...servicesList].sort((a,b) => a.count < b.count)
-
-    // if (!this.props.loggedin || !this.props.isAdmin){
-    //   return (
-    //     <section className="content">
-    //       <InvalidAccessMessage/>
-    //     </section>
-    //   )
-    // }
 
     return (
       <section className="content">
-        <h2>Histórico de vendas</h2>
+        <h2>Serviços Agendados</h2>
         <br/>
 
         <div>
           <b>Período:</b>  Inicio:<input type="date" name="begin_date" onChange={this.handleChangeLowerDate} value={this.state.lowerDate}/>   Fim:<input type="date" name="end_date" onChange={this.handleChangeHigherDate} value={this.state.higherDate}/><br/>
-          Tipo:
-          <select onChange={this.handleChangePicker}>
-            <option value="todos">Todos</option>
-            <option value="servicos">Serviços</option>
-            <option value="produtos">Produtos</option>
-          </select>
-
+    
           <table id='my_pet_services'>
             <tbody>
               <tr>
-                <th>Nome</th>
-                <th>Tipo</th>
-                <th>Quantidade</th>
-                <th>Preço unitário</th>
-                <th>Subtotal</th>
+                <th>Pet</th>
+                <th>Serviço</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Preço</th>
               </tr>
-
-              {list.map((item, idx) => {
-                if (item.type=='PRODUCT'){
-                  return <ListItem key={idx} name={item.productName} type='Produto' quantity={item.count} price={item.productPrice}/>
-                } else {
-                  return <ListItem key={idx} name={item.serviceName} type='Serviço' quantity={item.count} price={item.servicePrice}/>
-                }
+              
+              {servicesList.map((item, idx) => {
+                  return <ListItem key={idx} petName={item.petName} serviceName={item.serviceName} serviceDay={item.serviceDate} serviceTime={item.serviceTime} servicePrice={item.servicePrice}/>
+                
               })}
             </tbody>
           </table>
@@ -191,4 +149,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   actions
-)(withRouter(History));
+)(withRouter(AdminServices));
