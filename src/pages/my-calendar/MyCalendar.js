@@ -12,11 +12,10 @@ class MyCalendar extends React.Component{
   }
   
   render(){
-    let pets = [{petName:'Nome', petNumber:'3'}, {petName:'Nome2', petNumber:'2'}];
 
     return (<section className="content">
       <h2>Selecione o pet e o horário para o serviço</h2>
-      <b>Pet:</b> <SelectPet pets={pets}/>
+      <b id='pet-select-label'>Pet:</b> <SelectPet/>
       <WeekCalendar/>
     </section>);
   }

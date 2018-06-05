@@ -17,7 +17,7 @@ class HourCalendar extends React.Component{
     let appointments = [];
     for (let day=1; day<=5; day++){
       let data = this.props.list[day] || 'EMPTY';
-      appointments.push(<Appointment data={data} key={day} select='true'/>)
+      appointments.push(<Appointment data={data} key={day} date={this.props.dates[day-1]} time={this.props.hour}/>)
     }
     return (<tr className='calendar-hour'><BasicCell classNames='calendar-item' innerHTMLvalue={this.props.hour+'h - '+(this.props.hour+1)+'h'}/>{appointments}</tr>);
   }
