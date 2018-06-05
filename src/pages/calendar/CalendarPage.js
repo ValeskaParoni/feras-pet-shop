@@ -51,15 +51,16 @@ class CalendarPage extends React.Component{
   }
 
   getServicesByDate = () =>{
+    //format date to appropriate format
+    console.log(this.state.selectedDay);
     for(let i=0; i<this.props.scheduledServices.length; i++){
-      if(this.props.scheduledServices[i].serviceDate)
     }
     
   }
 
 
   showTimeSlots = () =>{
-
+    this.getServicesByDate();
     //get services from the scheduled day
     //available services and unavalaible services
     //available time can be clicked
@@ -93,7 +94,7 @@ class CalendarPage extends React.Component{
 
           <br/>
           <b>Dia desejado:</b>
-          <input type="date" name="birthdate" id="dateofbirth" min={this.getTodayDate()} onChange={this.showTimeSlots} value={this.state.selectedDay}/><br/>
+          <input type="date" min={this.getTodayDate()} onChange={this.showTimeSlots} value={this.state.selectedDay}/><br/>
           <div id="timeSlots">
           </div>
 
