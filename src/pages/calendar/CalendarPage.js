@@ -9,7 +9,7 @@ import {
 
 
 /*
-
+  Page for scheduling services
 */
 
 class CalendarPage extends React.Component{
@@ -17,16 +17,26 @@ class CalendarPage extends React.Component{
     super(props, context);
 
 
+    //checks schedule for today
+    let newSlots = [true,true,true,true,true,true,true,true,true,true];
+    let baseHour = 8;
+
+    this.props.scheduledServices.filter(service => service.serviceDate==this.getTodayDate()).map((service)=>{
+           if(service.serviceTime >=baseHour && service.serviceTime < baseHour+10){
+              newSlots[service.serviceTime-baseHour]=false;
+           }
+    });
+
+    //initiates state with selected service
     for(let i=0; i<this.props.registeredServices.length; i++){
       if(this.props.selectedService === this.props.registeredServices[i].id){
         this.state= {service: this.props.registeredServices[i], selectedPet: -1, selectedDay: this.getTodayDate(),
-          availableSlots: [true,true,true,true,true,true,true,true,true,true], selectedHour: 8};
+          availableSlots: newSlots, selectedHour: -1};
       }
     }
-
-
   }
 
+  //Gets date for today in yyyy-mm-dd format
   getTodayDate = () =>{
     var today = new Date();
     var dd = today.getDate();
@@ -44,6 +54,7 @@ class CalendarPage extends React.Component{
     return today;
   }
 
+  //handle change for selected pet
   handleChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -51,13 +62,13 @@ class CalendarPage extends React.Component{
     this.setState({"selectedPet": value});
   }
 
+  //handle change for hour
   handleChangeHour = (event) => {
     const target = event.target;
     const value = target.value;
     const name = target.name;
     this.setState({"selectedHour": value});
   }
-
 
 
    //get services from the scheduled day
@@ -71,24 +82,25 @@ class CalendarPage extends React.Component{
     this.setState({selectedDay: value});
     const baseHour = 8;
 
-    console.log("selected:"+value);
-    console.log(this.props.scheduledServices[0].serviceDate);
+    //check scheduled services for today, 10 slots
+    let newSlots = [true,true,true,true,true,true,true,true,true,true];
     this.props.scheduledServices.filter(service => service.serviceDate==value).map((service)=>{
            if(service.serviceTime >=baseHour && service.serviceTime < baseHour+10){
-              let newSlots = this.state.availableSlots;
               newSlots[service.serviceTime-baseHour]=false;
-              this.setState({availableSlots: newSlots});
-              console.log(newSlots);
            }
     });
-
+     this.setState({availableSlots: newSlots});
  
   }
 
+  //saves scheduled service
   addToCart = () =>{
 
     let petId = this.state.selectedPet;
 
+    //if pet was left unchanged, petId is -1
+
+    //get pet from list
     let pet;
     for(let i=0; i<this.props.pets.length; i++){
       if(petId==-1){
@@ -107,13 +119,25 @@ class CalendarPage extends React.Component{
  
     }
 
+    //if hour was unchanged, hour is first available slot (which is the first option shown)
+    let hour = this.state.selectedHour;
+    if(hour==-1){
+      for(let i=0; i<this.state.availableSlots.length; i++){
+        if(this.state.availableSlots[i]==true){
+          hour=i+8;
+          break;
+        }
+      }
+    }
+ 
+    //saves service
      let newService = {
         "id": this.state.service.id,
         "petID": pet.id,
         "petName": pet.name,
         "serviceName": this.state.service.serviceName,
         "serviceDate": this.state.selectedDay,
-        "serviceTime": this.state.selectedHour,
+        "serviceTime": hour,
         "serviceID": this.state.service.serviceID,
         "servicePrice": this.state.service.servicePrice,
         "servicePicture": this.state.service.servicePicture
