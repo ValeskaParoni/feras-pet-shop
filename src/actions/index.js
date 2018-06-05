@@ -165,3 +165,11 @@ export const updateSchedule = (updatedSchedule) =>{
 		updatedSchedule
 	)
 }
+
+export const selectService = (serviceId) =>{
+	return{
+		type: "SELECT_SERVICE",
+		serviceId
+	}
+}
+

@@ -4,6 +4,8 @@
         "petID": 1,
         "petName": "Morgana",
         "serviceName": "Banho",
+        "serviceDate": "2018-06-10",
+        "serviceTime":10,
         "serviceID": 1,
         "servicePrice": 40.00,
         "servicePicture": "./images/banho.jpg"
@@ -12,8 +14,10 @@
         "id": 2,
         "petID": 1,
         "petName": "Morgana",
-        "serviceID": "2",
         "serviceName": "Vacina",
+        "serviceDate": "2018-06-11",
+        "serviceTime":17,
+        "serviceID": "2",
         "servicePrice": 70.00,
         "servicePicture": "./images/vacina.jpg"
     }
