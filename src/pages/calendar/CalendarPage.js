@@ -50,17 +50,13 @@ class CalendarPage extends React.Component{
     this.setState({"selectedPet": value});
   }
 
-  getServicesByDate = () =>{
-    //format date to appropriate format
-    console.log(this.state.selectedDay);
-    for(let i=0; i<this.props.scheduledServices.length; i++){
-    }
-    
-  }
+
 
 
   showTimeSlots = () =>{
-    this.getServicesByDate();
+    console.log(this.state.selectedDay);
+    //this.props.scheduledServices.filter(service => service.petID==this.state.myPet.id).map((service)=>{
+
     //get services from the scheduled day
     //available services and unavalaible services
     //available time can be clicked

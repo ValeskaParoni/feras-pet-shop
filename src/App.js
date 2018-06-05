@@ -19,6 +19,7 @@ import RegisterServices from './pages/register-service/RegisterServices';
 import Cart from './pages/cart/Cart';
 import Payment from './pages/payment/Payment';
 import PaymentSuccess from './pages/payment/PaymentSuccess';
+import CalendarPage from './pages/calendar/CalendarPage';
 import styles from './styles.css';
 import {
   Route,
@@ -55,6 +56,7 @@ class App extends React.Component {
           <Route path="/paymentSuccess" component={PaymentSuccess}/>
           <Route path="/services" component={Services}/>
           <Route path="/registerServices" component={RegisterServices}/>
+          <Route path="/calendar" component={CalendarPage}/>
           <Footer />
         </div>
       </HashRouter>

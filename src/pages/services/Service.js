@@ -164,7 +164,7 @@ class Service extends React.Component{
       <Button buttonClass="button_with_margin" text="Editar serviço" onClick={this.editService}/>
     ) :
     (
-      <Button buttonClass="button_with_margin" text="Agendar" onClick={() => {}}/>
+       <NavLink to="/calendar"><Button buttonClass="button_with_margin" text="Agendar" onClick={() => {}}/></NavLink>
     )
     if (!this.state.serviceEditOn) {
       return (
