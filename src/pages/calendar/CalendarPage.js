@@ -141,6 +141,7 @@ class CalendarPage extends React.Component{
         "serviceName": this.state.service.serviceName,
         "serviceDate": this.state.selectedDay,
         "serviceTime": hour,
+        "serviceOrderDate": this.getTodayDate(),
         "serviceID": this.state.service.serviceID,
         "servicePrice": this.state.service.servicePrice,
         "servicePicture": this.state.service.servicePicture

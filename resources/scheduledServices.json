@@ -6,6 +6,7 @@
         "serviceName": "Banho",
         "serviceDate": "2018-06-10",
         "serviceTime":10,
+        "serviceOrderDate": "2018-06-01",
         "serviceID": 1,
         "servicePrice": 40.00,
         "servicePicture": "./images/banho.jpg"
@@ -17,6 +18,7 @@
         "serviceName": "Vacina",
         "serviceDate": "2018-06-11",
         "serviceTime":17,
+        "serviceOrderDate": "2018-06-05",
         "serviceID": "2",
         "servicePrice": 70.00,
         "servicePicture": "./images/vacina.jpg"

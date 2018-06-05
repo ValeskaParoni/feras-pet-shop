@@ -112,7 +112,7 @@ class History extends React.Component{
     if (this.state.type != 'produtos'){
       this.props.scheduledServicesReducer.scheduledServices
       .filter(soldService => {
-        return (!this.state.lowerDate || soldService.serviceDate >= this.state.lowerDate) && soldService.serviceDate <= this.state.higherDate
+        return (!this.state.lowerDate || soldService.serviceOrderDate >= this.state.lowerDate) && soldService.serviceOrderDate <= this.state.higherDate
       })
       .forEach(soldService => {
         const search = servicesList.find(service => service.serviceName == soldService.serviceName)
