@@ -57,12 +57,10 @@ class Cart extends React.Component{
   handlePayment = () => {
     if(this.validate()){
             //changes page from form into success message
+        this.props.insertOrder(this.props.cartReducer.cart)
+        this.props.emptyCart()
         this.props.history.push("/paymentSuccess");
     }
-    //empty cart
-        //TODO
-
-
   }
 
   //Validates input

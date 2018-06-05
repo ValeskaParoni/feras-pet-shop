@@ -145,3 +145,16 @@ export const deleteService = (serviceId) => {
 	}
 }
 
+export const insertOrder = (products) => {
+	return {
+		type: 'INSERT_ORDER',
+		products
+	}
+}
+
+export const restoreCatalogQuantity = (products) => {
+	return {
+		type: 'RESTORE_CATALOG_QUANTITY',
+		products,
+	}
+}

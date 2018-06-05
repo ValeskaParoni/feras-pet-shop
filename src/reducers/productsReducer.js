@@ -63,6 +63,22 @@ const productsReducer = (state = initialState, action) => {
       }
     }
 
+    case 'RESTORE_CATALOG_QUANTITY': {
+
+    	let registeredProducts = [...state.registeredProducts]
+    	action.products.forEach(product => {
+    		const registeredProduct = registeredProducts.find(p => p.id == product.id)
+
+    		if(registeredProduct)
+    			registeredProduct.count += product.count
+    	})
+
+    	return {
+    		...state,
+    		registeredProducts
+    	}
+    }
+
 
 		default:
 			return state;
