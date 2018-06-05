@@ -93,7 +93,7 @@ class CalendarPage extends React.Component{
 
           <br/>
           <b>Dia desejado:</b>
-          <input type="date" name="birthdate" id="dateofbirth" min={this.getTodayDate()} onChange={this.showTimeSlots} value={this.state.selectedDay/><br/>
+          <input type="date" name="birthdate" id="dateofbirth" min={this.getTodayDate()} onChange={this.showTimeSlots} value={this.state.selectedDay}/><br/>
           <div id="timeSlots">
           </div>
 

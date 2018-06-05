@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Button from '../controls/Button';
+import {
+  NavLink
+} from "react-router-dom";
 
 /*
 Shows a single pet. Handles pet editing.
@@ -9,7 +12,7 @@ Shows a single pet. Handles pet editing.
 props:
   this.props.id: id of the pet to be shown
 
-  TODO: add next service
+
 */
 
 class Pet extends React.Component{
@@ -18,7 +21,7 @@ class Pet extends React.Component{
 
     for(let i=0; i<this.props.pets.length; i++){
       if(this.props.id == this.props.pets[i].id)
-        this.state= {myPet: this.props.pets[i], petEditOn: false, myPetCopy: this.props.pets[i], deleted: false};
+        this.state= {myPet: this.props.pets[i], petEditOn: false, myPetCopy: this.props.pets[i], deleted: false, showServices: false};
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -36,7 +39,14 @@ class Pet extends React.Component{
      
   }
 
-
+  showServices = () =>{
+    if(this.state.showServices){
+      document.getElementById("myServices"+this.props.id).style.display = "none"; 
+    }else{
+      document.getElementById("myServices"+this.props.id).style.display = "block"; 
+    }
+    this.setState({showServices: !this.state.showServices});
+  }
   //get age of the pet according to birthdate
   //used to display pet age
   getAge = (dateString) =>{
@@ -180,6 +190,10 @@ class Pet extends React.Component{
     }
 
     if(!this.state.petEditOn){
+      
+      const pStyle = {
+        display: "none"
+      };
 
         return (
           <div className="pet_profile">
@@ -188,12 +202,31 @@ class Pet extends React.Component{
               <b>Nome:</b> {this.state.myPet.name}<br/>
               <b>Id:</b> {this.state.myPet.id}<br/>
               <b>Idade:</b> {this.getAge(this.state.myPet.birthdate)}<br/>
-              <b>Raça:</b> {this.state.myPet.breed} <br/>
-              <b>Próximo serviço agendado:</b> 
-              <br/>
+              <b>Raça:</b> {this.state.myPet.breed} <br/>              <br/>
               <div className="profile_buttons">
                 <Button buttonClass="button_with_margin" text="Editar cadastro" onClick={this.editPet}/>
-                <Button text="Serviços Agendados"/>
+                <Button text="Serviços Agendados" onClick={this.showServices}/>
+              </div>
+              <div id={"myServices"+this.props.id} style={pStyle}>
+                <table id="my_pet_services">
+                <tbody>
+                  <tr>
+                    <th>Serviço</th>
+                    <th>Data</th>
+                    <th>Horário</th>
+                    <th>Preço (R$)</th>
+                  </tr>
+              {this.props.scheduledServices.filter(service => service.petID==this.state.myPet.id).map((service)=>{
+                return (<tr>
+                        <td>{service.serviceName}</td>
+                        <td>{service.serviceDate}</td>
+                        <td>{service.serviceTime}</td>
+                        <td>{service.servicePrice}</td>
+                        </tr>
+                );
+              })}
+                </tbody>
+                </table>
               </div>
             </div>
           
@@ -238,7 +271,8 @@ class Pet extends React.Component{
 
 
 const mapStateToProps = state => {
-  return { pets: state.petsReducer.pets };
+  return { pets: state.petsReducer.pets, 
+          scheduledServices: state.scheduledServicesReducer.scheduledServices};
 }
 
 
