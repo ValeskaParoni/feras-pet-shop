@@ -57,6 +57,18 @@ nav a:hover {
     color: black;
 }
 
+.calendar-day{
+	display:inline-block;
+	border: 1px black;
+}
+
+.calendar-item{
+	height: 10vh;
+	border: 1px black;
+	padding: 2px;
+	width: 15vw;
+}
+
 b {
 	color: #49274A;
 }
@@ -218,6 +230,11 @@ input[type=file]{
 			padding: 0;
 			margin: 0 0 0 20;
 			float: none;
+			text-align: center;
+		}
+
+		input[type=password], #username_input{
+
 			text-align: center;
 		}
 
@@ -426,17 +443,6 @@ table tr td input{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 #edit_pet_buttons{
 	float: right;
 }
@@ -465,13 +471,9 @@ button:hover {
 }
 
 #register_pet_button, .button_right {
-	float: right;
-	margin-right: 20%;
-	margin-bottom: 10px;
-}
-
 .register_product_button{
     margin-bottom: 5px;
+}
 }
 
 @media screen and (max-width: 850px){

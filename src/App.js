@@ -15,6 +15,7 @@ import RegisterPet from './pages/register-pet/RegisterPet';
 import Products from './pages/products/Products';
 import RegisterProducts from './pages/register-products/RegisterProducts';
 import styles from './styles.css';
+import MyCalendar from './pages/my-calendar/MyCalendar';
 import {
   Route,
   NavLink,
@@ -45,6 +46,7 @@ class App extends React.Component {
           <Route path="/registerPet" component={RegisterPet}/>
           <Route path="/products" component={Products}/>
           <Route path="/registerProducts" component={RegisterProducts}/>
+          <Route path="/mycalendar" component={MyCalendar}/>
           <Footer />
         </div>
       </HashRouter>

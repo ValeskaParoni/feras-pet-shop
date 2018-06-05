@@ -92,3 +92,9 @@ export const deleteProduct = (productId) => {
 		productId
 	}
 }
+
+export const nextWeek = () => {
+	return {
+		type: 'NEXT_WEEK'
+	}
+}

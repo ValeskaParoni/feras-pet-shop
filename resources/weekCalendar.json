@@ -1,0 +1,122 @@
+[
+  {
+    "weekNumber": "1",
+    "weekSchedule": {
+      "1": {
+        "date": "July 2, 2018",
+        "appointments": {
+          "9": {
+            "serviceName": "Banho",
+            "clientName": "cliente123",
+            "imageSrc": "hamster2.jpg"
+          },
+          "10": {
+            "serviceName": "Tosa",
+            "clientName": "cliente123",
+            "imageSrc": "hamster2.jpg"
+          }
+        }
+      },
+      "2": {
+        "date": "July 3, 2018",
+        "appointments": {
+          "13": {
+            "serviceName": "Banho",
+            "clientName": "cliente623",
+            "imageSrc": "hamster.jpg"
+          }
+        }
+      },
+      "3": {
+        "date": "July 4, 2018",
+        "appointments": {
+        }
+      },
+      "4": {
+        "date": "July 5, 2018",
+        "appointments": {
+        }
+      },
+      "5": {
+        "date": "July 6, 2018",
+        "appointments": {
+          "16": {
+            "serviceName": "Banho",
+            "clientName": "cliente333",
+            "imageSrc": "hamster2.jpg"
+          }
+        }
+      }
+    }
+  },
+  {
+    "weekNumber": "2",
+    "weekSchedule": {
+      "1": {
+        "date": "July 9, 2018",
+        "appointments": {
+        }
+      },
+      "2": {
+        "date": "July 10, 2018",
+        "appointments": {
+        }
+      },
+      "3": {
+        "date": "July 11, 2018",
+        "appointments": {
+        }
+      },
+      "4": {
+        "date": "July 12, 2018",
+        "appointments": {
+          "15": {
+            "serviceName": "Banho",
+            "clientName": "cliente333",
+            "imageSrc": "hamster2.jpg"
+          }
+        }
+      },
+      "5": {
+        "date": "July 13, 2018",
+        "appointments": {
+        }
+      }
+    }
+  },
+  {
+    "weekNumber": "3",
+    "weekSchedule": {
+      "1": {
+        "date": "July 16, 2018",
+        "appointments": {
+        }
+      },
+      "2": {
+        "date": "July 17, 2018",
+        "appointments": {
+        }
+      },
+      "3": {
+        "date": "July 18, 2018",
+        "appointments": {
+        }
+      },
+      "4": {
+        "date": "July 19, 2018",
+        "appointments": {
+          "11": {
+            "serviceName": "Tosa",
+            "clientName": "cliente4",
+            "imageSrc": "hamster2.jpg"
+          }
+        }
+      },
+      "5": {
+        "date": "July 20, 2018",
+        "appointments": {
+        }
+      }
+    }
+  }
+]
