@@ -40,13 +40,14 @@ class Service extends React.Component{
   //cancels service editing and returns data to previous state
   cancelEdit = () =>{
 
+    console.log("cancelded");
 
     let serviceCopy = {...this.state.serviceCopy}
 
-    this.state.serviceCopy.serviceName = this.state.service.serviceName;
-    this.state.serviceCopy.serviceDescription = this.state.service.serviceDescription;
-    this.state.serviceCopy.servicePrice = this.state.service.servicePrice;
-    this.state.serviceCopy.servicePicture = this.state.service.servicePicture;
+    serviceCopy.serviceName = this.state.service.serviceName;
+    serviceCopy.serviceDescription = this.state.service.serviceDescription;
+    serviceCopy.servicePrice = this.state.service.servicePrice;
+    serviceCopy.servicePicture = this.state.service.servicePicture;
 
     this.setState(
                   {
