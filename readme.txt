@@ -4,7 +4,7 @@ Grupo:
 	Chan Ken Chen - 9436170
 	Cristiano Chiaramelli - 9293053
 	Elisa Saltori Trujillo - 8551100
-	Valeska Paroni Silva - 
+	Valeska Paroni Silva - 7977886
 
 Framework utilizado:
 	React
