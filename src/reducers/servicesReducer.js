@@ -56,4 +56,4 @@ const servicesReducer = (state = initialState, action) => {
 	}
 }
 
-export default servicesReducer
+export default servicesReducer;

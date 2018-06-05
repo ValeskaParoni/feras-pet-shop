@@ -163,6 +163,24 @@ class Pet extends React.Component{
     }
   }
 
+  getTodayDate = () =>{
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+     if(dd<10){
+            dd='0'+dd
+        } 
+        if(mm<10){
+            mm='0'+mm
+        } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+    
+    return today;
+  }
+  
+
   //edits user in redux
   updatePet = () => {
     
@@ -242,7 +260,7 @@ class Pet extends React.Component{
             <Button text="Excluir" buttonClass="delete_pet_button" onClick={this.deletePet}/>
             <div className="pet_info">
               <b>Nome:</b> <input type="text" name="name" value={this.state.myPetCopy.name} onChange={this.handleChange}/><br/>
-              <b>Data de nascimento:</b> <input type="date" name="birthdate" id="dateofbirth" value={this.state.myPetCopy.birthdate} onChange={this.handleChange}/><br/>
+              <b>Data de nascimento:</b> <input type="date" name="birthdate"  max = {this.getTodayDate()} id="dateofbirth" value={this.state.myPetCopy.birthdate} onChange={this.handleChange}/><br/>
               <b>Raça:</b>  <input type="text" name="breed" list="breeds" value={this.state.myPetCopy.breed} onChange={this.handleChange}/> <br/>
                   <datalist id="breeds" >
                       <option value="Golden Retriever"/>
