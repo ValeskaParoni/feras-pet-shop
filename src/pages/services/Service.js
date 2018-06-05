@@ -30,23 +30,28 @@ class Service extends React.Component{
 
   }
 
-  //adds a service to cart
-  addToCart = (service) =>{
-    this.props.decreaseCatalogQuantity(service)
-    this.props.addToCart(service)
-
+  goToCalendar = () =>{
+      if(!this.props.loggedin){
+        alert("Faça o login para agendar!");
+      }else{
+        this.props.selectService(this.props.id);
+        this.props.history.push("/calendar");
+      }
+     
   }
+
 
   //cancels service editing and returns data to previous state
   cancelEdit = () =>{
 
+    console.log("cancelded");
 
     let serviceCopy = {...this.state.serviceCopy}
 
-    this.state.serviceCopy.serviceName = this.state.service.serviceName;
-    this.state.serviceCopy.serviceDescription = this.state.service.serviceDescription;
-    this.state.serviceCopy.servicePrice = this.state.service.servicePrice;
-    this.state.serviceCopy.servicePicture = this.state.service.servicePicture;
+    serviceCopy.serviceName = this.state.service.serviceName;
+    serviceCopy.serviceDescription = this.state.service.serviceDescription;
+    serviceCopy.servicePrice = this.state.service.servicePrice;
+    serviceCopy.servicePicture = this.state.service.servicePicture;
 
     this.setState(
                   {
@@ -163,7 +168,9 @@ class Service extends React.Component{
       <Button buttonClass="button_with_margin" text="Editar serviço" onClick={this.editService}/>
     ) :
     (
-      <Button buttonClass="button_with_margin" text="Agendar" onClick={() => {}}/>
+
+      <Button buttonClass="button_with_margin" text="Agendar" onClick={() => this.goToCalendar()} />
+
     )
     if (!this.state.serviceEditOn) {
       return (
@@ -213,11 +220,12 @@ class Service extends React.Component{
 
 const mapStateToProps = state => {
   return { userId: state.usersReducer.userId, isAdmin: state.usersReducer.isAdmin,
-    loggedin: state.usersReducer.loggedin, registeredServices: state.servicesReducer.registeredServices };
+    loggedin: state.usersReducer.loggedin, registeredServices: state.servicesReducer.registeredServices,
+    selectedService: state.scheduledServicesReducer.selectedService};
 }
 
 
 export default connect(
   mapStateToProps,
   actions
-)(Service);
+)(withRouter(Service));

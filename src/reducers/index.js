@@ -5,6 +5,7 @@ import usersReducer from './usersReducer'
 import petsReducer from './petsReducer'
 import cartReducer from './cartReducer'
 import ordersReducer from './ordersReducer'
+import scheduledServicesReducer from './scheduledServicesReducer'
 
 const reducers = combineReducers({
 	productsReducer,
@@ -12,7 +13,8 @@ const reducers = combineReducers({
     usersReducer,
     petsReducer,
     cartReducer,
-    ordersReducer
+    ordersReducer,
+    scheduledServicesReducer
 });
 
 export default reducers;

@@ -580,3 +580,7 @@ button:hover {
 	text-align: center;
 	max-width: 80%;
 }
+
+select {
+    margin-left: 20px;
+}

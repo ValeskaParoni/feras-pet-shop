@@ -33,7 +33,7 @@ const servicesReducer = (state = initialState, action) => {
 		case 'EDIT_SERVICE':
 					 return {
 								...state,
-								services: state.registeredServices.map(
+								registeredServices: state.registeredServices.map(
 									 (currentService, i) => {
 												if(currentService.id === action.updatedService.id){
 														return {...currentService, ...action.updatedService};
@@ -48,7 +48,7 @@ const servicesReducer = (state = initialState, action) => {
 		case 'DELETE_SERVICE':
             return{
                 ...state,
-                services: state.registeredServices.filter((service, i) => service.id !== action.serviceId)
+                registeredServices: state.registeredServices.filter((service, i) => service.id !== action.serviceId)
 
             }
 		default:
@@ -56,4 +56,4 @@ const servicesReducer = (state = initialState, action) => {
 	}
 }
 
-export default servicesReducer
+export default servicesReducer;

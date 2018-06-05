@@ -145,6 +145,7 @@ export const deleteService = (serviceId) => {
 	}
 }
 
+
 export const insertOrder = (products) => {
 	return {
 		type: 'INSERT_ORDER',
@@ -156,5 +157,33 @@ export const restoreCatalogQuantity = (products) => {
 	return {
 		type: 'RESTORE_CATALOG_QUANTITY',
 		products,
+	}
+}
+
+export const scheduleService = (scheduledService) =>{
+	return{
+		type: "SCHEDULE_SERVICE",
+		scheduledService
+	}
+}
+
+export const removeScheduledService = (scheduleId) =>{
+	return{
+		type: "REMOVE_SCHEDULED_SERVICE",
+		scheduleId
+	}
+}
+
+export const updateSchedule = (updatedSchedule) =>{
+	return(
+		type: "EDIT_SCHEDULE",
+		updatedSchedule
+	)
+}
+
+export const selectService = (serviceId) =>{
+	return{
+		type: "SELECT_SERVICE",
+		serviceId
 	}
 }
