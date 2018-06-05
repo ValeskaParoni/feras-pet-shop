@@ -235,7 +235,7 @@ class Pet extends React.Component{
                     <th>Preço (R$)</th>
                   </tr>
               {this.props.scheduledServices.filter(service => service.petID==this.state.myPet.id).map((service)=>{
-                return (<tr>
+                return (<tr key={service.serviceName+service.serviceDate}>
                         <td>{service.serviceName}</td>
                         <td>{service.serviceDate}</td>
                         <td>{service.serviceTime}</td>
