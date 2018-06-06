@@ -75,14 +75,30 @@ a exclusão no diálogo.
 				-O serviço deve agora ter sido excluído da lista de serviços
 e não aparecerá mais na página de serviços.
 
-			4.d) Consultar serviços agendados
+		5) Serviços agendados
+
+			5.a) Consultar serviços agendados
 				-Clique no botão "Ver serviços agendados"
 				-Uma tela deverá aparecer com uma tabela. A data máxima inicial é o dia de hoje.
 				-Caso nenhum serviço tenha sido agendado ainda pelo usuário, dois serviços pré-
 programados poderão ser checados. Alterando a data máxima para dia 11 de junho, dois serviços
 agendados para Morgana deverão aparecer: uma vacina e um banho. 
+			
+			5.b) Editar serviço agendado
+				-Com um serviço agendado em exibição na tela, clique em "Alterar"
+				-Uma tela deve aparecer para editar o horário do serviço. Mude o dia para dia 21 de
+junho de 2018, às 15h.
+				-Clique em "Confirmar"
+				-Mudando a data máxima para dia 21 de junho, você deve ver agora o serviço com seu
+novo horário.
+			
+			5.c) Excluir serviço agendado
+				-Com um serviço agendado em exibição na tela, clique em "Excluir"
+				-Confirme a exclusão no diálogo
+				-O serviço selecionado deverá desaparecer da tela. O cancelamento
+do serviço também poderá ser verificado na página do pet se desejado.
 
-		5) Criar usuário
+		6) Criar usuário
 			-Logado como administrador, clique na opção "Cadastrar Usuário" no 
 header.
 			-Preencha o formulário. Para o teste, o formulário foi preenchido
@@ -98,7 +114,7 @@ da seguinte forma:
 com os dados do usuário digitados no formulário, poderá verificar que o novo usuário foi
 criado com sucesso.
 			
-		6) Relatórios gerenciais
+		7) Relatórios gerenciais
 			-Logado como administador, clique na opção "Relatórios gerenciais" no header.
 			-Uma página deve abrir com um seletor de datas e uma tabela com informações
 sobre vendas e serviços marcados.

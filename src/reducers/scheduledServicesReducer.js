@@ -20,7 +20,7 @@ const scheduledServicesReducer = (state = initialState, action) => {
         case 'EDIT_SCHEDULE':
                return {
                     ...state,
-                    scheduledServices: state.schecheduledServices.map(
+                    scheduledServices: state.scheduledServices.map(
                        (currentSchedule, i) => {
                             if(currentSchedule.id === action.updatedSchedule.id){
                                 return {...currentSchedule, ...action.updatedSchedule};

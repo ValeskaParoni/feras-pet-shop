@@ -27,9 +27,15 @@ class AdminServicesRow extends React.Component{
 
   }
 
+  modifyScheduledService = () => {
+
+    this.props.setService(this.props.service);
+    this.props.history.push("/updateScheduledService");
+  }
+
   render(){
 
-    if(!this.state.deletes){
+    if(!this.state.deleted){
       return (
         <tr>
           <td>{this.props.service.petName}</td>
@@ -38,7 +44,7 @@ class AdminServicesRow extends React.Component{
           <td>{this.props.service.serviceDate}</td>
           <td>{this.props.service.serviceTime}</td>
           <td>{this.props.service.servicePrice}</td>
-          <td><Button text="Alterar" /></td>
+          <td><Button text="Alterar" onClick={this.modifyScheduledService}/></td>
           <td><Button text="Excluir" onClick={this.deleteScheduledService}/></td>
         </tr>
       );

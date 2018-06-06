@@ -23,6 +23,7 @@ import PaymentSuccess from './pages/payment/PaymentSuccess';
 import History from './pages/history/History';
 import CalendarPage from './pages/calendar/CalendarPage';
 import AdminServices from './pages/admin-services/AdminServices';
+import UpdateScheduledService from './pages/admin-services/UpdateScheduledService';
 import styles from './styles.css';
 import {
   Route,
@@ -63,6 +64,7 @@ class App extends React.Component {
           <Route path="/history" component={History}/>
           <Route path="/calendar" component={CalendarPage}/>
           <Route path="/adminServices" component={AdminServices}/>
+          <Route path="/updateScheduledService" component={UpdateScheduledService}/>
           <Footer />
         </div>
       </HashRouter>

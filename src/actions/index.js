@@ -175,10 +175,10 @@ export const removeScheduledService = (scheduleId) =>{
 }
 
 export const updateSchedule = (updatedSchedule) =>{
-	return(
+	return{
 		type: "EDIT_SCHEDULE",
 		updatedSchedule
-	)
+	}
 }
 
 export const selectService = (serviceId) =>{
