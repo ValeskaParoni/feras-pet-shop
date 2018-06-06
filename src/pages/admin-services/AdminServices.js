@@ -3,23 +3,12 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions'
 import {withRouter} from 'react-router-dom';
 import Button from '../../controls/Button';
+import AdminServicesRow from './AdminServicesRow';
 import {
   NavLink
 } from "react-router-dom";
-//import styles from '../styles.css';
 import InvalidAccessMessage from '../../controls/InvalidAccessMessage';
 
-const ListItem = ({petName, serviceName, serviceDay, serviceTime, servicePrice}) => {
-  return (
-    <tr>
-      <td>{petName}</td>
-      <td>{serviceName}</td>
-      <td>{serviceDay}</td>
-      <td>{serviceTime}</td>
-      <td>{servicePrice}</td>
-    </tr>
-  )
-}
 
 class AdminServices extends React.Component{
 
@@ -118,14 +107,17 @@ class AdminServices extends React.Component{
             <tbody>
               <tr>
                 <th>Pet</th>
+                <th>Id do serviço</th>
                 <th>Serviço</th>
                 <th>Data</th>
                 <th>Horário</th>
                 <th>Preço</th>
+                <th>Alterar data</th>
+                <th>Excluir</th>
               </tr>
               
               {servicesList.map((item, idx) => {
-                  return <ListItem key={idx} petName={item.petName} serviceName={item.serviceName} serviceDay={item.serviceDate} serviceTime={item.serviceTime} servicePrice={item.servicePrice}/>
+                  return <AdminServicesRow key={idx} service={item}/>
                 
               })}
             </tbody>

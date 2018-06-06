@@ -133,9 +133,13 @@ class CalendarPage extends React.Component{
       }
     }
  
+    //get id
+    //id is one greater than last service
+    let id = this.props.scheduledServices[this.props.scheduledServices.length-1].id+1;
+
     //saves service
      let newService = {
-        "id": this.state.service.id,
+        "id": id,
         "petID": pet.id,
         "petName": pet.name,
         "serviceName": this.state.service.serviceName,
