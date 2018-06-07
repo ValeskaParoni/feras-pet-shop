@@ -57,6 +57,37 @@ nav a:hover {
     color: black;
 }
 
+#pet-select-label{
+    font-size:1.2em;
+    margin-left: 20px;
+}
+
+#pet-select{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+#table-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #49274a;
+}
+
+#table-header>input{
+    width: 50px;
+    height: 50px;
+}
+
+#table-header>h3{
+    color: #FFF;
+}
+
+.appointment-img{
+    width: 100%;
+}
+
 b {
 	color: #49274A;
 }
@@ -218,6 +249,11 @@ input[type=file]{
 			padding: 0;
 			margin: 0 0 0 20;
 			float: none;
+			text-align: center;
+		}
+
+		input[type=password], #username_input{
+
 			text-align: center;
 		}
 
@@ -399,7 +435,7 @@ table, th, td {
     border: 1px solid black;
 }
 
-table tr td {
+table tr td{
 	width: 60px;
 	height: 140px;
 	text-align: center;
@@ -427,17 +463,6 @@ table tr td input{
 	padding: 10px;
     margin-left: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 #edit_pet_buttons{
@@ -468,13 +493,9 @@ button:hover {
 }
 
 #register_pet_button, .button_right {
-	float: right;
-	margin-right: 20%;
-	margin-bottom: 10px;
-}
-
 .register_product_button{
     margin-bottom: 5px;
+}
 }
 
 #cart_total_value {
@@ -580,6 +601,21 @@ button:hover {
 	text-align: center;
 	max-width: 80%;
 }
+
+
+.calendar-client-name{
+  text-align: center; display: flex; justify-content: center; color: #fff; background-color: #;
+}
+.calendar-service-name{
+  text-align: center; display: flex; justify-content: center;
+}
+
+.calendar-item button{
+  height: 100%;
+}
+
+.calendar-dates{
+  height: 40px;
 
 select {
     margin-left: 20px;

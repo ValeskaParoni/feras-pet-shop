@@ -25,6 +25,7 @@ import CalendarPage from './pages/calendar/CalendarPage';
 import AdminServices from './pages/admin-services/AdminServices';
 import UpdateScheduledService from './pages/admin-services/UpdateScheduledService';
 import styles from './styles.css';
+import MyCalendar from './pages/my-calendar/MyCalendar';
 import {
   Route,
   NavLink,
@@ -55,6 +56,7 @@ class App extends React.Component {
           <Route path="/registerPet" component={RegisterPet}/>
           <Route path="/products" component={Products}/>
           <Route path="/registerProducts" component={RegisterProducts}/>
+          <Route path="/mycalendar" component={MyCalendar}/>
           <Route path="/cart" component={Cart}/>
           <Route path="/payment" component={Payment}/>
           <Route path="/servicepayment" component={ServicePayment}/>

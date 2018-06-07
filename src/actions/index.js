@@ -93,6 +93,13 @@ export const deleteProduct = (productId) => {
 	}
 }
 
+
+export const nextWeek = () => {
+	return {
+		type: 'NEXT_WEEK'
+	}
+}
+
 export const addToCart = (product) => {
 	return {
 		type: 'ADD_TO_CART',
